@@ -16,6 +16,9 @@ public class Group {
     @GeneratedValue
     private Long id;
 
+    @Column(unique = true)
+    private String name;
+
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @JsonManagedReference
