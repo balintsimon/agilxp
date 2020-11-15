@@ -60,12 +60,11 @@ public class UserService {
     }
 
     @Transactional
-    public boolean deleteUser(AppUserDto appUserDto) {
-        if (isAppUserDtoInvalid(appUserDto)) return false;
-        AppUser userToDelete = appUserDao.findBy(appUserDto.getId()).orElseThrow(
+    public boolean deleteUser(Long id) {
+        AppUser userToDelete = appUserDao.findBy(id).orElseThrow(
                 () -> new EntityNotFoundException(USER_ID_NOT_FOUND)
         );
-        appUserDao.removeBy(appUserDto.getName());
+        appUserDao.removeBy(id);
         return true;
     }
 

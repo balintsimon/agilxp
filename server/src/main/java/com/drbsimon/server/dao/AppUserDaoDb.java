@@ -53,7 +53,7 @@ public class AppUserDaoDb implements AppUserDao {
     }
 
     @Override
-    public void removeBy(String userName) {
-        repository.removeByName(userName);
+    public void removeBy(Long id) {
+        repository.removeById(id);
     }
 }

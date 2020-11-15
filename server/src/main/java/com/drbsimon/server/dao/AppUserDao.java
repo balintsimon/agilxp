@@ -20,5 +20,5 @@ public interface AppUserDao {
 
     void save(AppUser appUser);
 
-    void removeBy(String userName);
+    void removeBy(Long id);
 }
