@@ -1,5 +1,6 @@
 package com.drbsimon.server.dao;
 
+import com.drbsimon.server.model.AppUser;
 import com.drbsimon.server.model.MainMenu;
 import com.drbsimon.server.repository.MainMenuRepository;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +16,12 @@ import javax.transaction.Transactional;
 public class MainMenuDaoDb implements MainMenuDao {
     private final MainMenuRepository repository;
 
+    @Override
+    public MainMenu getBy(AppUser appUser) {
+        return repository.getByAppUser(appUser);
+    }
+
+    @Override
     public void save(MainMenu mainMenu) {
         repository.save(mainMenu);
     }

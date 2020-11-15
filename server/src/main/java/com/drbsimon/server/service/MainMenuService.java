@@ -1,5 +1,6 @@
 package com.drbsimon.server.service;
 
+import com.drbsimon.server.dao.AppUserDao;
 import com.drbsimon.server.dao.MainMenuDao;
 import com.drbsimon.server.model.*;
 import lombok.Data;
@@ -15,6 +16,7 @@ import java.util.Arrays;
 @Slf4j
 public class MainMenuService {
     private final MainMenuDao mainMenuDao;
+    private final AppUserDao appUserDao;
 
     public MainMenu addMainMenuToNewUser(AppUser appUser) {
         MainMenu newMainMenu = MainMenu.builder()
@@ -27,5 +29,14 @@ public class MainMenuService {
                 .build();
         mainMenuDao.save(newMainMenu);
         return newMainMenu;
+    }
+
+    public MainMenu getMainMenuByUser(Long id) {
+        AppUser user = appUserDao.getBy(id);
+        return mainMenuDao.getBy(user);
+    }
+
+    public void save(MainMenu mainMenu) {
+        mainMenuDao.save(mainMenu);
     }
 }
