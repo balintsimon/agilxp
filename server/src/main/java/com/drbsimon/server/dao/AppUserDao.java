@@ -19,4 +19,6 @@ public interface AppUserDao {
     boolean exists(String userName);
 
     void save(AppUser appUser);
+
+    void removeBy(String userName);
 }

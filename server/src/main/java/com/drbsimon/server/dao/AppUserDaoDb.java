@@ -51,4 +51,9 @@ public class AppUserDaoDb implements AppUserDao {
     public void save(AppUser appUser) {
         repository.save(appUser);
     }
+
+    @Override
+    public void removeBy(String userName) {
+        repository.removeByName(userName);
+    }
 }

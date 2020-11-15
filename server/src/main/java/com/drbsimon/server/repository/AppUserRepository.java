@@ -15,4 +15,6 @@ public interface AppUserRepository extends JpaRepository<AppUser, Long> {
     AppUser getById(Long id);
 
     AppUser getByName(String name);
+
+    void removeByName(String name);
 }

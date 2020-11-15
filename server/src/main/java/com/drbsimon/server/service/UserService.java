@@ -3,7 +3,6 @@ package com.drbsimon.server.service;
 import com.drbsimon.server.dao.AppUserDao;
 import com.drbsimon.server.dao.UserGroupDao;
 import com.drbsimon.server.model.AppUser;
-import com.drbsimon.server.model.MainMenu;
 import com.drbsimon.server.model.Role;
 import com.drbsimon.server.model.UserGroup;
 import com.drbsimon.server.model.dto.AppUserDto;
@@ -50,13 +49,23 @@ public class UserService {
 
     @Transactional
     public boolean modifyUserName(AppUserDto appUserDto) {
-        if (isModificationRequestInvalid(appUserDto)) return false;
+        if (isAppUserDtoInvalid(appUserDto)) return false;
         AppUser modifiedUser = appUserDao.findBy(appUserDto.getId()).orElseThrow(
                 () -> new EntityNotFoundException(USER_ID_NOT_FOUND)
         );
         if (modifiedUser.getName() == appUserDto.getName()) return true;
         modifiedUser.setName(appUserDto.getName());
         appUserDao.save(modifiedUser);
+        return true;
+    }
+
+    @Transactional
+    public boolean deleteUser(AppUserDto appUserDto) {
+        if (isAppUserDtoInvalid(appUserDto)) return false;
+        AppUser userToDelete = appUserDao.findBy(appUserDto.getId()).orElseThrow(
+                () -> new EntityNotFoundException(USER_ID_NOT_FOUND)
+        );
+        appUserDao.removeBy(appUserDto.getName());
         return true;
     }
 
@@ -75,7 +84,7 @@ public class UserService {
                 || newUserDto.getRequesterName().isEmpty();
     }
 
-    private boolean isModificationRequestInvalid(AppUserDto appUserDto) {
+    private boolean isAppUserDtoInvalid(AppUserDto appUserDto) {
         return appUserDto.getId() == null
                 || appUserDto.getName() == null
                 || appUserDto.getName().isEmpty();
@@ -124,6 +133,4 @@ public class UserService {
 
         userGroupDao.save(existingGroup);
     }
-
-
 }
