@@ -22,6 +22,6 @@ public class SubMenu {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @JsonManagedReference
-    @ManyToMany
+    @ManyToMany(mappedBy = "subMenus")
     private List<MainMenu> mainMenus;
 }

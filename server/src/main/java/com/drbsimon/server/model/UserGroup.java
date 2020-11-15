@@ -1,6 +1,6 @@
 package com.drbsimon.server.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,7 +21,7 @@ public class UserGroup {
 
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @JsonManagedReference
-    @OneToMany(mappedBy = "usergroup", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @JsonBackReference
+    @OneToMany(mappedBy = "userGroup", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<AppUser> appUsers;
 }

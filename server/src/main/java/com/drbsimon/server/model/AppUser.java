@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -23,7 +22,7 @@ public class AppUser {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @JsonBackReference
-    private UserGroup membergroup;
+    private UserGroup userGroup;
 
     @OneToOne
     @ToString.Exclude
