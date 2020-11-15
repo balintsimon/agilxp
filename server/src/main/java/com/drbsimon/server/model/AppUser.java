@@ -18,6 +18,9 @@ public class AppUser {
     @Column(unique = true)
     private String name;
 
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
     @ManyToOne
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
