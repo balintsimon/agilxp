@@ -23,5 +23,5 @@ public class Background {
     @EqualsAndHashCode.Exclude
     @JsonManagedReference
     @OneToMany(mappedBy = "background", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    private List<AppUser> appUsers;
+    private List<MainMenu> mainMenus;
 }

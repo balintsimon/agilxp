@@ -22,5 +22,5 @@ public class Application {
     @EqualsAndHashCode.Exclude
     @JsonBackReference
     @ManyToMany
-    private List<AppUser> appUsers;
+    private List<MainMenu> mainMenus;
 }

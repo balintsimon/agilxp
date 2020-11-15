@@ -11,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @Entity
-public class AppUser {
+public class MainMenu {
     @Id
     @GeneratedValue
     private Long id;
@@ -19,14 +19,25 @@ public class AppUser {
     @Column(unique = true)
     private String name;
 
+    @OneToOne
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private AppUser appUser;
+
+    @EqualsAndHashCode.Exclude
+    @JsonBackReference
+    @ManyToMany
+    private List<Application> applications;
+
     @ManyToOne
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @JsonBackReference
-    private UserGroup membergroup;
+    private Background background;
 
-    @OneToOne
+    @ManyToOne
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    private MainMenu mainMenu;
+    @JsonBackReference
+    private Theme theme;
 }

@@ -23,5 +23,5 @@ public class Theme {
     @EqualsAndHashCode.Exclude
     @JsonManagedReference
     @OneToMany(mappedBy = "theme", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    private List<AppUser> appUsers;
+    private List<MainMenu> mainMenus;
 }
