@@ -1,9 +1,9 @@
 package com.drbsimon.server.repository;
 
-import com.drbsimon.server.model.MainMenu;
+import com.drbsimon.server.model.Icon;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface MainMenuRepository extends JpaRepository<MainMenu, Long> {
+public interface IconRepository extends JpaRepository<Icon, Long> {
 }

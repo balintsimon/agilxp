@@ -29,6 +29,11 @@ public class MainMenu {
     @JsonBackReference
     private List<SubMenu> subMenus;
 
+    @ManyToMany(mappedBy = "mainmenu", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @EqualsAndHashCode.Exclude
+    @JsonBackReference
+    private List<Icon> icons;
+
     @ManyToMany
     @EqualsAndHashCode.Exclude
     @JsonBackReference
