@@ -19,7 +19,7 @@ public class IconDaoDb implements IconDao {
 
     @Override
     public List<Icon> getAll() {
-        return repository.getAll();
+        return repository.findAll();
     }
 
     @Override

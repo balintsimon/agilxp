@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface IconRepository extends JpaRepository<Icon, Long> {
-    List<Icon> getAll();
+    List<Icon> findAll();
 
     Icon getByMainMenus(MainMenu mainMenu);
 
