@@ -12,6 +12,10 @@ public interface AppUserDao {
 
     Optional<AppUser> findBy(String userName);
 
+    AppUser getBy(Long id);
+
+    AppUser getBy(String userName);
+
     boolean exists(String userName);
 
     void save(AppUser appUser);

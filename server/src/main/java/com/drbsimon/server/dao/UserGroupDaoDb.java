@@ -29,8 +29,18 @@ public class UserGroupDaoDb implements UserGroupDao {
     }
 
     @Override
-    public Optional<UserGroup> findBy(String userName) {
-        return repository.findByName(userName);
+    public Optional<UserGroup> findBy(String groupName) {
+        return repository.findByName(groupName);
+    }
+
+    @Override
+    public UserGroup getBy(Long id) {
+        return repository.getById(id);
+    }
+
+    @Override
+    public UserGroup getBy(String groupName) {
+        return repository.getByName(groupName);
     }
 
     @Override

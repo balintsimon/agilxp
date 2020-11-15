@@ -11,7 +11,11 @@ public interface UserGroupDao {
 
     Optional<UserGroup> findBy(Long id);
 
-    Optional<UserGroup> findBy(String userName);
+    Optional<UserGroup> findBy(String groupName);
+
+    UserGroup getBy(Long id);
+
+    UserGroup getBy(String groupName);
 
     boolean exists(String groupName);
 

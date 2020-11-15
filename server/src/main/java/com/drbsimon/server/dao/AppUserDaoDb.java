@@ -33,6 +33,16 @@ public class AppUserDaoDb implements AppUserDao {
     }
 
     @Override
+    public AppUser getBy(Long id) {
+        return repository.getById(id);
+    }
+
+    @Override
+    public AppUser getBy(String userName) {
+        return repository.getByName(userName);
+    }
+
+    @Override
     public boolean exists(String userName) {
         return findBy(userName).isPresent();
     }
