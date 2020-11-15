@@ -6,6 +6,7 @@ import com.drbsimon.server.model.AppUser;
 import com.drbsimon.server.model.MainMenu;
 import com.drbsimon.server.model.Role;
 import com.drbsimon.server.model.UserGroup;
+import com.drbsimon.server.model.dto.AppUserDto;
 import com.drbsimon.server.model.dto.NewGroupDto;
 import com.drbsimon.server.model.dto.NewUserDto;
 import lombok.Data;
@@ -13,6 +14,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
+import javax.transaction.Transactional;
 import java.util.Arrays;
 import java.util.List;
 
@@ -24,6 +27,8 @@ public class UserService {
     private final AppUserDao appUserDao;
     private final UserGroupDao userGroupDao;
     private final MainMenuService mainMenuService;
+
+    private static final String USER_ID_NOT_FOUND = "The given userId does not exist!";
 
     public boolean tryRegisterGroup(NewGroupDto newGroupDto) {
         if (isGroupRegistrationRequestInvalid(newGroupDto)
@@ -43,6 +48,18 @@ public class UserService {
         return true;
     }
 
+    @Transactional
+    public boolean modifyUserName(AppUserDto appUserDto) {
+        if (isModificationRequestInvalid(appUserDto)) return false;
+        AppUser modifiedUser = appUserDao.findBy(appUserDto.getId()).orElseThrow(
+                () -> new EntityNotFoundException(USER_ID_NOT_FOUND)
+        );
+        if (modifiedUser.getName() == appUserDto.getName()) return true;
+        modifiedUser.setName(appUserDto.getName());
+        appUserDao.save(modifiedUser);
+        return true;
+    }
+
     private boolean isGroupRegistrationRequestInvalid(NewGroupDto newGroupDto) {
         return newGroupDto.getGroupName() == null
                 || newGroupDto.getUserName() == null
@@ -56,6 +73,12 @@ public class UserService {
                 || newUserDto.getRequesterName() == null
                 || newUserDto.getNewUserName().isEmpty()
                 || newUserDto.getRequesterName().isEmpty();
+    }
+
+    private boolean isModificationRequestInvalid(AppUserDto appUserDto) {
+        return appUserDto.getId() == null
+                || appUserDto.getName() == null
+                || appUserDto.getName().isEmpty();
     }
 
     protected boolean isRequesterGroupAdmin(String requesterName, Long groupId) {
@@ -101,5 +124,6 @@ public class UserService {
 
         userGroupDao.save(existingGroup);
     }
+
 
 }
