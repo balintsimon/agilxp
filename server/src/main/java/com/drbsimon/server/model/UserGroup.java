@@ -11,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @Entity
-public class Group {
+public class UserGroup {
     @Id
     @GeneratedValue
     private Long id;
@@ -22,6 +22,6 @@ public class Group {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @JsonManagedReference
-    @OneToMany(mappedBy = "member", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    private List<Member> members;
+    @OneToMany(mappedBy = "usergroup", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    private List<AppUser> appUsers;
 }

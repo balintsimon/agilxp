@@ -1,6 +1,5 @@
 package com.drbsimon.server.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
@@ -23,6 +22,6 @@ public class Background {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @JsonManagedReference
-    @OneToMany(mappedBy = "member", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    private List<Member> members;
+    @OneToMany(mappedBy = "background", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    private List<AppUser> appUsers;
 }

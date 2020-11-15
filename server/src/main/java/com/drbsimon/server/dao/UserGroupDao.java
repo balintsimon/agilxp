@@ -1,4 +1,4 @@
 package com.drbsimon.server.dao;
 
-public interface MemberDao {
+public interface UserGroupDao {
 }

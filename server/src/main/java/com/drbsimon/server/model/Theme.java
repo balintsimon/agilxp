@@ -22,6 +22,6 @@ public class Theme {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @JsonManagedReference
-    @OneToMany(mappedBy = "member", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    private List<Member> members;
+    @OneToMany(mappedBy = "theme", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    private List<AppUser> appUsers;
 }

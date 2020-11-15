@@ -11,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @Entity
-public class Member {
+public class AppUser {
     @Id
     @GeneratedValue
     private Long id;
@@ -23,7 +23,7 @@ public class Member {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @JsonBackReference
-    private Group group;
+    private UserGroup membergroup;
 
     @EqualsAndHashCode.Exclude
     @JsonBackReference
