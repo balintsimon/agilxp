@@ -24,9 +24,14 @@ public class MainMenu {
     @EqualsAndHashCode.Exclude
     private AppUser appUser;
 
+    @ManyToMany(mappedBy = "mainmenu", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     @EqualsAndHashCode.Exclude
     @JsonBackReference
+    private List<SubMenu> subMenus;
+
     @ManyToMany
+    @EqualsAndHashCode.Exclude
+    @JsonBackReference
     private List<Application> applications;
 
     @ManyToOne
