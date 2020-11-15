@@ -3,6 +3,7 @@ package com.drbsimon.server.service;
 import com.drbsimon.server.dao.AppUserDao;
 import com.drbsimon.server.dao.UserGroupDao;
 import com.drbsimon.server.model.AppUser;
+import com.drbsimon.server.model.MainMenu;
 import com.drbsimon.server.model.Role;
 import com.drbsimon.server.model.UserGroup;
 import com.drbsimon.server.model.dto.NewGroupDto;
@@ -14,7 +15,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 @Data
 @RequiredArgsConstructor
@@ -23,6 +23,7 @@ import java.util.Optional;
 public class UserService {
     private final AppUserDao appUserDao;
     private final UserGroupDao userGroupDao;
+    private final MainMenuService mainMenuService;
 
     public boolean tryRegisterGroup(NewGroupDto newGroupDto) {
         if (isGroupRegistrationRequestInvalid(newGroupDto)
@@ -70,6 +71,8 @@ public class UserService {
                 .role(Role.ADMIN)
                 .build();
 
+        mainMenuService.addMainMenuToNewUser(newAdmin);
+
         UserGroup newGroup = new UserGroup().builder()
                 .name(newGroupDto.getGroupName())
                 .build();
@@ -85,6 +88,8 @@ public class UserService {
                 .name(newUserDto.getNewUserName())
                 .role(Role.USER)
                 .build();
+
+        mainMenuService.addMainMenuToNewUser(newUser);
 
         UserGroup existingGroup = userGroupDao.getBy(newUserDto.getGroupId());
         List<AppUser> existingUsers = existingGroup.getAppUsers();

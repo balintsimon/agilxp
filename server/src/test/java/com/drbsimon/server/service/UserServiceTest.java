@@ -27,6 +27,9 @@ class UserServiceTest {
     @MockBean
     private UserGroupDao userGroupDao;
 
+    @MockBean
+    private MainMenuService mainMenuService;
+
     @Autowired
     private UserService service;
 
