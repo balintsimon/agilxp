@@ -63,5 +63,9 @@ public class UserCaller {
         restTemplate.put(baseUrl + "/user/theme", appUserDto);
     }
 
-    
+    public boolean addNewApplication(ApplicationRequestDto applicationRequestDto) {
+        return restTemplate.postForObject(baseUrl + "/user/application", applicationRequestDto, Boolean.class);
+    }
+
+   
 }
