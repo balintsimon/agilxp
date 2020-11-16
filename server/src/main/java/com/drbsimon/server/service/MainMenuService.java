@@ -32,7 +32,7 @@ public class MainMenuService {
         iconDao.save(icon);
 
         MainMenu newMainMenu = MainMenu.builder()
-                .name("default")
+                .name(appUser.getName() + " default")
                 .background(background)
                 .backgrounds(Arrays.asList(background))
                 .subMenus(Arrays.asList(subMenu))
