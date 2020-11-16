@@ -27,4 +27,9 @@ public class UserCaller {
         return appUsers.getAppUsers();
     }
 
+    public AppUser getUserById(Long id) {
+        return restTemplate.getForObject(baseUrl + "/user/" + id, AppUser.class);
+    }
+
+    
 }
