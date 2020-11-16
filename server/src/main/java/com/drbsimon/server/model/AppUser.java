@@ -35,4 +35,6 @@ public class AppUser {
 
     @Enumerated(EnumType.STRING)
     private Theme theme;
+
+    private String lastRunAppName;
 }
