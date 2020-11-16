@@ -56,7 +56,7 @@ public class UserService {
     @Transactional
     public boolean modifyUserName(AppUserDto appUserDto) {
         if (isAppUserDtoInvalid(appUserDto)) return false;
-        AppUser modifiedUser = appUserDao.findBy(appUserDto.getId()).orElseThrow(
+        AppUser modifiedUser = appUserDao.findBy(appUserDto.getUserId()).orElseThrow(
                 () -> new EntityNotFoundException(USER_ID_NOT_FOUND)
         );
         if (modifiedUser.getName().equals(appUserDto.getName())) return true;
@@ -77,7 +77,7 @@ public class UserService {
     @Transactional
     public boolean changeAppUserTheme(AppUserDto appUserDto) {
         if (isAppUserDtoInvalid(appUserDto) || appUserDto.getTheme() == null) return false;
-        AppUser modifiedUser = appUserDao.findBy(appUserDto.getId()).orElseThrow(
+        AppUser modifiedUser = appUserDao.findBy(appUserDto.getUserId()).orElseThrow(
                 () -> new EntityNotFoundException(USER_ID_NOT_FOUND)
         );
         if (modifiedUser.getName().equals(appUserDto.getName())) return true;
@@ -103,7 +103,7 @@ public class UserService {
     }
 
     private boolean isAppUserDtoInvalid(AppUserDto appUserDto) {
-        return appUserDto.getId() == null
+        return appUserDto.getUserId() == null
                 || appUserDto.getName() == null
                 || appUserDto.getName().isEmpty();
     }
