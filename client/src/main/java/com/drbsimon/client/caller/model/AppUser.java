@@ -14,4 +14,5 @@ public class AppUser {
     private UserGroup userGroup;
     private MainMenu mainMenu;
     private Theme theme;
+    private String lastRunAppName;
 }
