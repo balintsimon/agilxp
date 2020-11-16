@@ -31,5 +31,9 @@ public class UserCaller {
         return restTemplate.getForObject(baseUrl + "/user/" + id, AppUser.class);
     }
 
+    public void changeUserName(AppUserDto appUserDto) {
+        restTemplate.put(baseUrl + "/user", appUserDto);
+    }
+
     
 }
