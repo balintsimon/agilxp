@@ -12,4 +12,5 @@ import lombok.NoArgsConstructor;
 public class ApplicationRequestDto {
     private Long userId;
     private String applicationName;
+    private Long applicationId;
 }
