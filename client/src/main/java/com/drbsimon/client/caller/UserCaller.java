@@ -39,5 +39,8 @@ public class UserCaller {
         restTemplate.delete(baseUrl + "/user/" + id);
     }
 
-    
+    public boolean registerNewGroup(NewGroupDto newGroupDto) {
+        return restTemplate.postForObject(baseUrl + "/user/group", newGroupDto, Boolean.class);
+    }
+
 }
