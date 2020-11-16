@@ -18,6 +18,7 @@ public class UserController {
     private final IconService iconService;
     private final MainMenuService mainMenuService;
     private final BackgroundService backgroundService;
+    private final ApplicationService applicationService;
 
     @GetMapping
     public AppUserWrapper getAllUsers() {
@@ -69,4 +70,13 @@ public class UserController {
         return userService.deleteUser(id);
     }
 
+    @PostMapping("/application")
+    public boolean addNewApplication(@RequestBody ApplicationRequestDto applicationRequestDto) {
+        return applicationService.addNewApplication(applicationRequestDto);
+    }
+
+    @PostMapping("/application/{id}")
+    public String runApplication(@RequestBody ApplicationRequestDto applicationRequestDto) {
+        return applicationService.runApplication(applicationRequestDto);
+    }
 }
