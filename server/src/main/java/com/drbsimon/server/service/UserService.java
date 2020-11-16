@@ -35,6 +35,14 @@ public class UserService {
         return appUserWrapper;
     }
 
+    public AppUser getBy(String userName) {
+        return appUserDao.findBy(userName).orElse(new AppUser());
+    }
+
+    public AppUser getBy(Long userId) {
+        return appUserDao.findBy(userId).orElse(new AppUser());
+    }
+
     public boolean tryRegisterGroup(NewGroupDto newGroupDto) {
         if (isGroupRegistrationRequestInvalid(newGroupDto)
                 || appUserDao.exists(newGroupDto.getUserName())
