@@ -54,7 +54,7 @@ public class UserService {
         AppUser modifiedUser = appUserDao.findBy(appUserDto.getId()).orElseThrow(
                 () -> new EntityNotFoundException(USER_ID_NOT_FOUND)
         );
-        if (modifiedUser.getName() == appUserDto.getName()) return true;
+        if (modifiedUser.getName().equals(appUserDto.getName())) return true;
         modifiedUser.setName(appUserDto.getName());
         appUserDao.save(modifiedUser);
         return true;
@@ -98,7 +98,7 @@ public class UserService {
     }
 
     private void saveNewGroup(NewGroupDto newGroupDto) {
-        AppUser newAdmin = new AppUser().builder()
+        AppUser newAdmin = AppUser.builder()
                 .name(newGroupDto.getUserName())
                 .role(Role.ADMIN)
                 .theme(Theme.DEFAULT)
@@ -106,7 +106,7 @@ public class UserService {
 
         mainMenuService.addMainMenuToNewUser(newAdmin);
 
-        UserGroup newGroup = new UserGroup().builder()
+        UserGroup newGroup = UserGroup.builder()
                 .name(newGroupDto.getGroupName())
                 .build();
 
@@ -117,7 +117,7 @@ public class UserService {
     }
 
     private void saveNewUser(NewUserDto newUserDto) {
-        AppUser newUser = new AppUser().builder()
+        AppUser newUser = AppUser.builder()
                 .name(newUserDto.getNewUserName())
                 .role(Role.USER)
                 .theme(Theme.DEFAULT)
