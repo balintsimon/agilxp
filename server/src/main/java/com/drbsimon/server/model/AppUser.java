@@ -27,7 +27,7 @@ public class AppUser {
     @JsonManagedReference
     private UserGroup userGroup;
 
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @JsonManagedReference

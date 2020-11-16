@@ -26,7 +26,7 @@ public class MainMenu {
     @JsonBackReference
     private AppUser appUser;
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinTable(
             name="main_menu_sub_menus",
             joinColumns = @JoinColumn(name = "mainmenu_id"),
@@ -36,7 +36,7 @@ public class MainMenu {
     @JsonManagedReference
     private List<SubMenu> subMenus;
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinTable(
             name="menu_icons",
             joinColumns = @JoinColumn(name = "mainmenu_id"),
@@ -51,7 +51,7 @@ public class MainMenu {
     @JsonManagedReference
     private List<Application> applications;
 
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     @EqualsAndHashCode.Exclude
     @JsonManagedReference
     private Background background;
