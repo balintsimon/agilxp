@@ -9,6 +9,7 @@ import com.drbsimon.server.model.UserGroup;
 import com.drbsimon.server.model.dto.AppUserDto;
 import com.drbsimon.server.model.dto.NewGroupDto;
 import com.drbsimon.server.model.dto.NewUserDto;
+import com.drbsimon.server.model.wrapper.AppUserWrapper;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -29,6 +30,13 @@ public class UserService {
     private final MainMenuService mainMenuService;
 
     private static final String USER_ID_NOT_FOUND = "The given userId does not exist!";
+
+    public AppUserWrapper getAllUsers() {
+        List<AppUser> allUsers = appUserDao.findAll();
+        AppUserWrapper appUserWrapper = new AppUserWrapper();
+        appUserWrapper.setAppUsers(allUsers);
+        return appUserWrapper;
+    }
 
     public boolean tryRegisterGroup(NewGroupDto newGroupDto) {
         if (isGroupRegistrationRequestInvalid(newGroupDto)
