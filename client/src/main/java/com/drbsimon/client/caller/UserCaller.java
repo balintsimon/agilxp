@@ -51,5 +51,9 @@ public class UserCaller {
         return restTemplate.postForObject(baseUrl + "/user/icon", iconDto, Boolean.class);
     }
 
+    public boolean addNewBackground(BackgroundRequestDto backgroundRequestDto) {
+        return restTemplate.postForObject(baseUrl + "/user/background", backgroundRequestDto, Boolean.class);
+    }
+
     
 }
