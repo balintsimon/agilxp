@@ -88,7 +88,7 @@ public class UserService {
         AppUser modifiedUser = appUserDao.findBy(appUserDto.getUserId()).orElseThrow(
                 () -> new EntityNotFoundException(USER_ID_NOT_FOUND)
         );
-        if (modifiedUser.getName().equals(appUserDto.getName())) return true;
+        if (modifiedUser.getTheme().equals(appUserDto.getTheme())) return true;
         modifiedUser.setTheme(appUserDto.getTheme());
         appUserDao.save(modifiedUser);
         return true;
