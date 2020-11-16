@@ -47,5 +47,9 @@ public class UserCaller {
         return restTemplate.postForObject(baseUrl + "/user", newUserDto, Boolean.class);
     }
 
+    public boolean addNewIcon(IconDto iconDto) {
+        return restTemplate.postForObject(baseUrl + "/user/icon", iconDto, Boolean.class);
+    }
+
     
 }
