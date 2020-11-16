@@ -43,4 +43,9 @@ public class UserCaller {
         return restTemplate.postForObject(baseUrl + "/user/group", newGroupDto, Boolean.class);
     }
 
+    public boolean registerNewUser(NewUserDto newUserDto) {
+        return restTemplate.postForObject(baseUrl + "/user", newUserDto, Boolean.class);
+    }
+
+    
 }
