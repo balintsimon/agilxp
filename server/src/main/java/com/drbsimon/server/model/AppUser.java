@@ -1,6 +1,6 @@
 package com.drbsimon.server.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -24,12 +24,13 @@ public class AppUser {
     @ManyToOne
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @JsonBackReference
+    @JsonManagedReference
     private UserGroup userGroup;
 
     @OneToOne
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
+    @JsonManagedReference
     private MainMenu mainMenu;
 
     @Enumerated(EnumType.STRING)

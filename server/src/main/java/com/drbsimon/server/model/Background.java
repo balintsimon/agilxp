@@ -1,10 +1,9 @@
 package com.drbsimon.server.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -21,13 +20,13 @@ public class Background {
 
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @JsonManagedReference
+    @JsonBackReference
     @ManyToOne
     private MainMenu chosenMainMenu;
 
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @JsonManagedReference
+    @JsonBackReference
     @ManyToOne
     private MainMenu mainMenu;
 }
