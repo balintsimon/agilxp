@@ -3,10 +3,7 @@ package com.drbsimon.server.controller;
 import com.drbsimon.server.model.MainMenu;
 import com.drbsimon.server.model.dto.*;
 import com.drbsimon.server.model.wrapper.AppUserWrapper;
-import com.drbsimon.server.service.BackgroundService;
-import com.drbsimon.server.service.IconService;
-import com.drbsimon.server.service.MainMenuService;
-import com.drbsimon.server.service.UserService;
+import com.drbsimon.server.service.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -47,19 +44,19 @@ public class UserController {
         return iconService.addNewIcon(iconDto);
     }
 
-    @PostMapping("/add_background")
+    @PostMapping("/background")
     public boolean addNewBackground(@RequestBody BackgroundRequestDto backgroundRequestDto) {
         return backgroundService.addNewBackground(backgroundRequestDto);
     }
 
-    @PostMapping("/background")
-    public boolean changeBackground(@RequestBody BackgroundRequestDto backgroundRequestDto) {
-        return backgroundService.setBackgroundToMainMenu(backgroundRequestDto);
+    @PutMapping("/background")
+    public void changeBackground(@RequestBody BackgroundRequestDto backgroundRequestDto) {
+        backgroundService.setBackgroundToMainMenu(backgroundRequestDto);
     }
 
     @PutMapping
-    public boolean modifyUserName(@RequestBody AppUserDto appUserDto) {
-        return userService.modifyUserName(appUserDto);
+    public void modifyUserName(@RequestBody AppUserDto appUserDto) {
+        userService.modifyUserName(appUserDto);
     }
 
     @PutMapping("/theme")

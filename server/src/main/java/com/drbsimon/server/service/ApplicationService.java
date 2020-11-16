@@ -1,6 +1,7 @@
 package com.drbsimon.server.service;
 
 import com.drbsimon.server.dao.ApplicationDao;
+import com.drbsimon.server.model.AppUser;
 import com.drbsimon.server.model.Application;
 import com.drbsimon.server.model.MainMenu;
 import com.drbsimon.server.model.dto.ApplicationDto;
@@ -22,6 +23,7 @@ import java.util.List;
 public class ApplicationService {
     private final ApplicationDao applicationDao;
     private final MainMenuService mainMenuService;
+    private final UserService userService;
 
     public boolean addNewApplication(ApplicationRequestDto applicationRequestDto) {
         MainMenu userMainMenu = mainMenuService.getMainMenuByUser(applicationRequestDto.getUserId());
@@ -60,7 +62,10 @@ public class ApplicationService {
         return applicationWrapper;
     }
 
-    public String runApplication(Long id) {
-        return applicationDao.getBy(id).getName();
+    public String runApplication(ApplicationRequestDto applicationRequestDto) {
+        Application app = applicationDao.getBy(applicationRequestDto.getApplicationId());
+        AppUser appUser = userService.getBy(applicationRequestDto.getUserId());
+        appUser.setLastRunAppName(app.getName());
+        return applicationDao.getBy(app.getId()).getName();
     }
 }
