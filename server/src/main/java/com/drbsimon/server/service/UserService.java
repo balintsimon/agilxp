@@ -2,10 +2,7 @@ package com.drbsimon.server.service;
 
 import com.drbsimon.server.dao.AppUserDao;
 import com.drbsimon.server.dao.UserGroupDao;
-import com.drbsimon.server.model.AppUser;
-import com.drbsimon.server.model.Role;
-import com.drbsimon.server.model.Theme;
-import com.drbsimon.server.model.UserGroup;
+import com.drbsimon.server.model.*;
 import com.drbsimon.server.model.dto.AppUserDto;
 import com.drbsimon.server.model.dto.NewGroupDto;
 import com.drbsimon.server.model.dto.NewUserDto;
@@ -125,16 +122,17 @@ public class UserService {
                 .theme(Theme.DEFAULT)
                 .build();
 
-        mainMenuService.addMainMenuToNewUser(newAdmin);
-
         UserGroup newGroup = UserGroup.builder()
                 .name(newGroupDto.getGroupName())
                 .build();
 
         newAdmin.setUserGroup(newGroup);
         newGroup.setAppUsers(Arrays.asList(newAdmin));
-
         userGroupDao.save(newGroup);
+
+        MainMenu newMenu = mainMenuService.addMainMenuToNewUser(newAdmin);
+        newAdmin.setMainMenu(newMenu);
+        appUserDao.save(newAdmin);
     }
 
     private void saveNewUser(NewUserDto newUserDto) {
@@ -143,8 +141,6 @@ public class UserService {
                 .role(Role.USER)
                 .theme(Theme.DEFAULT)
                 .build();
-
-        mainMenuService.addMainMenuToNewUser(newUser);
 
         UserGroup existingGroup = userGroupDao.getBy(newUserDto.getGroupId());
         List<AppUser> existingUsers = existingGroup.getAppUsers();
@@ -155,5 +151,9 @@ public class UserService {
         existingGroup.setAppUsers(existingUsers);
 
         userGroupDao.save(existingGroup);
+
+        MainMenu newMenu = mainMenuService.addMainMenuToNewUser(newUser);
+        newUser.setMainMenu(newMenu);
+        appUserDao.save(newUser);
     }
 }
