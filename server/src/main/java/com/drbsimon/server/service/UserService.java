@@ -69,6 +69,19 @@ public class UserService {
         return true;
     }
 
+    @Transactional
+    public boolean changeAppUserTheme(AppUserDto appUserDto) {
+        if (isAppUserDtoInvalid(appUserDto) || appUserDto.getTheme() == null) return false;
+        AppUser modifiedUser = appUserDao.findBy(appUserDto.getId()).orElseThrow(
+                () -> new EntityNotFoundException(USER_ID_NOT_FOUND)
+        );
+        if (modifiedUser.getName().equals(appUserDto.getName())) return true;
+        modifiedUser.setTheme(appUserDto.getTheme());
+        appUserDao.save(modifiedUser);
+        return true;
+    }
+
+
     private boolean isGroupRegistrationRequestInvalid(NewGroupDto newGroupDto) {
         return newGroupDto.getGroupName() == null
                 || newGroupDto.getUserName() == null

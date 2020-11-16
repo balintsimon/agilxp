@@ -1,5 +1,6 @@
 package com.drbsimon.server.model.dto;
 
+import com.drbsimon.server.model.Theme;
 import lombok.*;
 
 @Data
@@ -9,4 +10,5 @@ import lombok.*;
 public class AppUserDto {
     private Long id;
     private String name;
+    private Theme theme;
 }
