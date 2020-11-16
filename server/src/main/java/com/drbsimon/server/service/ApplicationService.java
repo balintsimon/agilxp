@@ -36,8 +36,8 @@ public class ApplicationService {
 
         userMainMenu.setApplications(applications);
 
-        mainMenuService.save(userMainMenu);
         applicationDao.save(newApplication);
+        mainMenuService.save(userMainMenu);
         return true;
     }
 
