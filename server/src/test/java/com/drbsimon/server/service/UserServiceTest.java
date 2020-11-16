@@ -4,6 +4,7 @@ import com.drbsimon.server.dao.AppUserDao;
 import com.drbsimon.server.dao.UserGroupDao;
 import com.drbsimon.server.model.AppUser;
 import com.drbsimon.server.model.Role;
+import com.drbsimon.server.model.Theme;
 import com.drbsimon.server.model.UserGroup;
 import com.drbsimon.server.model.dto.NewGroupDto;
 import com.drbsimon.server.model.dto.NewUserDto;
@@ -178,6 +179,7 @@ class UserServiceTest {
         given(appUserDao.getBy(adminName)).willReturn(AppUser.builder()
                 .name(adminName)
                 .role(Role.USER)
+                .theme(Theme.DEFAULT)
                 .userGroup(UserGroup.builder()
                         .name("group")
                         .id(groupId)
@@ -206,6 +208,7 @@ class UserServiceTest {
         given(appUserDao.getBy(adminName)).willReturn(AppUser.builder()
                 .name(adminName)
                 .role(Role.ADMIN)
+                .theme(Theme.DEFAULT)
                 .userGroup(UserGroup.builder()
                         .name("group")
                         .id(groupId + 1L)
@@ -234,6 +237,7 @@ class UserServiceTest {
         given(appUserDao.getBy(adminName)).willReturn(AppUser.builder()
                 .name(adminName)
                 .role(Role.ADMIN)
+                .theme(Theme.DEFAULT)
                 .userGroup(UserGroup.builder()
                         .name("group")
                         .id(groupId)

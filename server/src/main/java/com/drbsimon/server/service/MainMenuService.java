@@ -25,7 +25,6 @@ public class MainMenuService {
                 .name("default")
                 .background(background)
                 .backgrounds(Arrays.asList(background))
-                .theme(Theme.builder().name(appUser.getName() + " default").build())
                 .subMenus(Arrays.asList(SubMenu.builder().name(appUser.getName() + " default").build()))
                 .icons(Arrays.asList(Icon.builder().name(appUser.getName() + " default").build()))
                 .appUser(appUser)

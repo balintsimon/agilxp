@@ -31,4 +31,7 @@ public class AppUser {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private MainMenu mainMenu;
+
+    @Enumerated(EnumType.STRING)
+    private Theme theme;
 }

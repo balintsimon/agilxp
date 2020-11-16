@@ -4,6 +4,7 @@ import com.drbsimon.server.dao.AppUserDao;
 import com.drbsimon.server.dao.UserGroupDao;
 import com.drbsimon.server.model.AppUser;
 import com.drbsimon.server.model.Role;
+import com.drbsimon.server.model.Theme;
 import com.drbsimon.server.model.UserGroup;
 import com.drbsimon.server.model.dto.AppUserDto;
 import com.drbsimon.server.model.dto.NewGroupDto;
@@ -100,6 +101,7 @@ public class UserService {
         AppUser newAdmin = new AppUser().builder()
                 .name(newGroupDto.getUserName())
                 .role(Role.ADMIN)
+                .theme(Theme.DEFAULT)
                 .build();
 
         mainMenuService.addMainMenuToNewUser(newAdmin);
@@ -118,6 +120,7 @@ public class UserService {
         AppUser newUser = new AppUser().builder()
                 .name(newUserDto.getNewUserName())
                 .role(Role.USER)
+                .theme(Theme.DEFAULT)
                 .build();
 
         mainMenuService.addMainMenuToNewUser(newUser);

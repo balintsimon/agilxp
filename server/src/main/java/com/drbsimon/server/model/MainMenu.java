@@ -59,10 +59,4 @@ public class MainMenu {
     @EqualsAndHashCode.Exclude
     @JsonBackReference
     private List<Background> backgrounds;
-
-    @ManyToOne
-    @ToString.Exclude
-    @EqualsAndHashCode.Exclude
-    @JsonBackReference
-    private Theme theme;
 }
