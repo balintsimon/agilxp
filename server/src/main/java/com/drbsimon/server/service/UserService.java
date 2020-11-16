@@ -110,8 +110,8 @@ public class UserService {
 
     protected boolean isRequesterGroupAdmin(String requesterName, Long groupId) {
         AppUser requester = appUserDao.getBy(requesterName);
-        return requester == null
-                && requester.getRole() == Role.ADMIN
+        return requester != null
+                && requester.getRole().equals(Role.ADMIN)
                 && requester.getUserGroup().getId().equals(groupId);
     }
 
@@ -141,16 +141,10 @@ public class UserService {
                 .role(Role.USER)
                 .theme(Theme.DEFAULT)
                 .build();
-
         UserGroup existingGroup = userGroupDao.getBy(newUserDto.getGroupId());
-        List<AppUser> existingUsers = existingGroup.getAppUsers();
-
         newUser.setUserGroup(existingGroup);
-
-        existingUsers.add(newUser);
-        existingGroup.setAppUsers(existingUsers);
-
         userGroupDao.save(existingGroup);
+        appUserDao.save(newUser);
 
         MainMenu newMenu = mainMenuService.addMainMenuToNewUser(newUser);
         newUser.setMainMenu(newMenu);
