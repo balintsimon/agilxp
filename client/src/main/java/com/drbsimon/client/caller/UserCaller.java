@@ -35,5 +35,9 @@ public class UserCaller {
         restTemplate.put(baseUrl + "/user", appUserDto);
     }
 
+    public void deleteUser(Long id) {
+        restTemplate.delete(baseUrl + "/user/" + id);
+    }
+
     
 }
