@@ -59,5 +59,9 @@ public class UserCaller {
         restTemplate.put(baseUrl + "/user/background", backgroundRequestDto);
     }
 
+    public void changeUserTheme(AppUserDto appUserDto) {
+        restTemplate.put(baseUrl + "/user/theme", appUserDto);
+    }
+
     
 }
