@@ -67,5 +67,8 @@ public class UserCaller {
         return restTemplate.postForObject(baseUrl + "/user/application", applicationRequestDto, Boolean.class);
     }
 
-   
+    public String runApplication(ApplicationRequestDto applicationRequestDto) {
+        String requestUrl = baseUrl + "/user/application/" + applicationRequestDto.getApplicationId();
+        return restTemplate.postForObject(requestUrl, applicationRequestDto, String.class);
+    }
 }
