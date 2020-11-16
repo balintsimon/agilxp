@@ -11,5 +11,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ApplicationRequestDto {
     private Long userId;
-    private String ApplicationName;
+    private String applicationName;
 }

@@ -8,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AppUserDto {
-    private Long id;
+    private Long userId;
     private String name;
     private Theme theme;
 }
