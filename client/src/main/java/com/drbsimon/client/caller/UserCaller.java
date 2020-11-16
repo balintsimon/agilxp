@@ -55,5 +55,9 @@ public class UserCaller {
         return restTemplate.postForObject(baseUrl + "/user/background", backgroundRequestDto, Boolean.class);
     }
 
+    public void changeBackground(BackgroundRequestDto backgroundRequestDto) {
+        restTemplate.put(baseUrl + "/user/background", backgroundRequestDto);
+    }
+
     
 }
