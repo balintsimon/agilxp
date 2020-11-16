@@ -49,11 +49,16 @@ public class MainMenu {
     @JsonBackReference
     private List<Application> applications;
 
-    @ManyToOne
-    @ToString.Exclude
+    @OneToOne
     @EqualsAndHashCode.Exclude
     @JsonBackReference
     private Background background;
+
+    @OneToMany(mappedBy = "mainMenu", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @JsonBackReference
+    private List<Background> backgrounds;
 
     @ManyToOne
     @ToString.Exclude

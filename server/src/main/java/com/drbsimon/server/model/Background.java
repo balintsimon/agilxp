@@ -22,6 +22,12 @@ public class Background {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @JsonManagedReference
-    @OneToMany(mappedBy = "background", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    private List<MainMenu> mainMenus;
+    @ManyToOne
+    private MainMenu chosenMainMenu;
+
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @JsonManagedReference
+    @ManyToOne
+    private MainMenu mainMenu;
 }

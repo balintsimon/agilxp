@@ -19,9 +19,12 @@ public class MainMenuService {
     private final AppUserDao appUserDao;
 
     public MainMenu addMainMenuToNewUser(AppUser appUser) {
+        Background background = Background.builder().name(appUser.getName() + " default").build();
+
         MainMenu newMainMenu = MainMenu.builder()
                 .name("default")
-                .background(Background.builder().name(appUser.getName() + " default").build())
+                .background(background)
+                .backgrounds(Arrays.asList(background))
                 .theme(Theme.builder().name(appUser.getName() + " default").build())
                 .subMenus(Arrays.asList(SubMenu.builder().name(appUser.getName() + " default").build()))
                 .icons(Arrays.asList(Icon.builder().name(appUser.getName() + " default").build()))
