@@ -87,4 +87,12 @@ public class ServerCallerService {
                 .build();
         return serverCaller.addNewIcon(newIcon);
     }
+
+    public boolean addNewApplication(String appName, Long userId) {
+        ApplicationRequestDto newApp = ApplicationRequestDto.builder()
+                .applicationName(appName)
+                .userId(userId)
+                .build();
+        return serverCaller.addNewApplication(newApp);
+    }
 }
