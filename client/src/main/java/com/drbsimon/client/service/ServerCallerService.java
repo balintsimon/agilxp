@@ -53,4 +53,13 @@ public class ServerCallerService {
                 .build();
         serverCaller.changeUserName(appUserDto);
     }
+
+    public void changeUserTheme(String userName, Long userId, Theme newTheme) {
+        AppUserDto userDto = AppUserDto.builder()
+                .name(userName)
+                .theme(newTheme)
+                .userId(userId)
+                .build();
+        serverCaller.changeUserTheme(userDto);
+    }
 }
