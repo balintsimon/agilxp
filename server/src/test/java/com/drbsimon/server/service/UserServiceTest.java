@@ -6,6 +6,7 @@ import com.drbsimon.server.model.AppUser;
 import com.drbsimon.server.model.Role;
 import com.drbsimon.server.model.Theme;
 import com.drbsimon.server.model.UserGroup;
+import com.drbsimon.server.model.dto.GroupCreatedDto;
 import com.drbsimon.server.model.dto.NewGroupDto;
 import com.drbsimon.server.model.dto.NewUserDto;
 import org.junit.jupiter.api.Test;
@@ -45,14 +46,14 @@ class UserServiceTest {
     public void testRegisterGroupWithNullInRegistrationForm() {
         String userName = null;
         String groupName = "Group";
-        boolean expected = false;
+        GroupCreatedDto expected = new GroupCreatedDto(null, null, false);
 
         NewGroupDto newGroupDto = NewGroupDto.builder()
                 .userName(userName)
                 .groupName(groupName)
                 .build();
 
-        boolean actual = service.tryRegisterGroup(newGroupDto);
+        GroupCreatedDto actual = service.tryRegisterGroup(newGroupDto);
 
         assertThat(actual).isEqualTo(expected);
     }
@@ -61,14 +62,14 @@ class UserServiceTest {
     public void testRegisterGroupWithEmptyStringInRegistrationForm() {
         String userName = "";
         String groupName = "Group";
-        boolean expected = false;
+        GroupCreatedDto expected = new GroupCreatedDto(null, null, false);
 
         NewGroupDto newGroupDto = NewGroupDto.builder()
                 .userName(userName)
                 .groupName(groupName)
                 .build();
 
-        boolean actual = service.tryRegisterGroup(newGroupDto);
+        GroupCreatedDto actual = service.tryRegisterGroup(newGroupDto);
 
         assertThat(actual).isEqualTo(expected);
     }
@@ -77,7 +78,7 @@ class UserServiceTest {
     public void testRegisterGroupWithUserNameTaken() {
         String userName = "Username";
         String groupName = "Group";
-        boolean expected = false;
+        GroupCreatedDto expected = new GroupCreatedDto(null, null, false);
 
         NewGroupDto newGroupDto = NewGroupDto.builder()
                 .userName(userName)
@@ -86,7 +87,7 @@ class UserServiceTest {
 
         given(appUserDao.exists(userName)).willReturn(true);
         given(userGroupDao.exists(groupName)).willReturn(false);
-        boolean actual = service.tryRegisterGroup(newGroupDto);
+        GroupCreatedDto actual = service.tryRegisterGroup(newGroupDto);
 
         assertThat(actual).isEqualTo(expected);
     }
@@ -95,7 +96,7 @@ class UserServiceTest {
     public void testRegisterGroupWithGroupNameTaken() {
         String userName = "Username";
         String groupName = "Group";
-        boolean expected = false;
+        GroupCreatedDto expected = new GroupCreatedDto(null, null, false);
 
         NewGroupDto newGroupDto = NewGroupDto.builder()
                 .userName(userName)
@@ -104,25 +105,7 @@ class UserServiceTest {
 
         given(appUserDao.exists(userName)).willReturn(false);
         given(userGroupDao.exists(groupName)).willReturn(true);
-        boolean actual = service.tryRegisterGroup(newGroupDto);
-
-        assertThat(actual).isEqualTo(expected);
-    }
-
-    @Test
-    public void testSuccessfulNewGroupRegister() {
-        String userName = "Username";
-        String groupName = "Group";
-        boolean expected = true;
-
-        NewGroupDto newGroupDto = NewGroupDto.builder()
-                .userName(userName)
-                .groupName(groupName)
-                .build();
-
-        given(appUserDao.exists(userName)).willReturn(false);
-        given(userGroupDao.exists(groupName)).willReturn(false);
-        boolean actual = service.tryRegisterGroup(newGroupDto);
+        GroupCreatedDto actual = service.tryRegisterGroup(newGroupDto);
 
         assertThat(actual).isEqualTo(expected);
     }
@@ -132,7 +115,7 @@ class UserServiceTest {
         String newUserName = null;
         String adminName = "Admin";
         Long groupId = 1L;
-        boolean expected = false;
+        AppUser expected = new AppUser();
 
         NewUserDto newUserDto = NewUserDto.builder()
                 .newUserName(newUserName)
@@ -140,7 +123,7 @@ class UserServiceTest {
                 .groupId(groupId)
                 .build();
 
-        boolean actual = service.tryRegisterNewUser(newUserDto);
+        AppUser actual = service.tryRegisterNewUser(newUserDto);
 
         assertThat(actual).isEqualTo(expected);
     }
@@ -150,7 +133,7 @@ class UserServiceTest {
         String newUserName = "";
         String adminName = "Admin";
         Long groupId = 1L;
-        boolean expected = false;
+        AppUser expected = new AppUser();
 
         NewUserDto newUserDto = NewUserDto.builder()
                 .newUserName(newUserName)
@@ -158,7 +141,7 @@ class UserServiceTest {
                 .groupId(groupId)
                 .build();
 
-        boolean actual = service.tryRegisterNewUser(newUserDto);
+        AppUser actual = service.tryRegisterNewUser(newUserDto);
 
         assertThat(actual).isEqualTo(expected);
     }
@@ -168,7 +151,7 @@ class UserServiceTest {
         String newUserName = "New User";
         String adminName = "Admin";
         Long groupId = 1L;
-        boolean expected = false;
+        AppUser expected = new AppUser();
 
         NewUserDto newUserDto = NewUserDto.builder()
                 .newUserName(newUserName)
@@ -187,7 +170,7 @@ class UserServiceTest {
                 .build());
         given(appUserDao.exists(newUserName)).willReturn(false);
 
-        boolean actual = service.tryRegisterNewUser(newUserDto);
+        AppUser actual = service.tryRegisterNewUser(newUserDto);
 
         assertThat(actual).isEqualTo(expected);
     }
@@ -197,7 +180,7 @@ class UserServiceTest {
         String newUserName = "New User";
         String adminName = "Admin";
         Long groupId = 1L;
-        boolean expected = false;
+        AppUser expected = new AppUser();
 
         NewUserDto newUserDto = NewUserDto.builder()
                 .newUserName(newUserName)
@@ -216,7 +199,7 @@ class UserServiceTest {
                 .build());
         given(appUserDao.exists(newUserName)).willReturn(false);
 
-        boolean actual = service.tryRegisterNewUser(newUserDto);
+        AppUser actual = service.tryRegisterNewUser(newUserDto);
 
         assertThat(actual).isEqualTo(expected);
     }
@@ -226,7 +209,7 @@ class UserServiceTest {
         String newUserName = "New User";
         String adminName = "Admin";
         Long groupId = 1L;
-        boolean expected = false;
+        AppUser expected = new AppUser();
 
         NewUserDto newUserDto = NewUserDto.builder()
                 .newUserName(newUserName)
@@ -245,36 +228,7 @@ class UserServiceTest {
                 .build());
         given(appUserDao.exists(newUserName)).willReturn(true);
 
-        boolean actual = service.tryRegisterNewUser(newUserDto);
-
-        assertThat(actual).isEqualTo(expected);
-    }
-
-    @Test
-    public void testNewUserSuccessfulSave() {
-        String newUserName = "New User";
-        String adminName = "Admin";
-        Long groupId = 1L;
-        boolean expected = true;
-
-        NewUserDto newUserDto = NewUserDto.builder()
-                .newUserName(newUserName)
-                .requesterName(adminName)
-                .groupId(groupId)
-                .build();
-
-        given(appUserDao.getBy(adminName)).willReturn(AppUser.builder()
-                .name(adminName)
-                .role(Role.ADMIN)
-                .theme(Theme.DEFAULT)
-                .userGroup(UserGroup.builder()
-                        .name("group")
-                        .id(groupId)
-                        .build())
-                .build());
-        given(appUserDao.exists(newUserName)).willReturn(false);
-
-        boolean actual = service.tryRegisterNewUser(newUserDto);
+        AppUser actual = service.tryRegisterNewUser(newUserDto);
 
         assertThat(actual).isEqualTo(expected);
     }

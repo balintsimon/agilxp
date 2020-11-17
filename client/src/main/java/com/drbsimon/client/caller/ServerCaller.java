@@ -16,7 +16,7 @@ import java.util.List;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class UserCaller {
+public class ServerCaller {
     private final RestTemplate restTemplate;
 
     @Value("${backend.url}")
@@ -39,12 +39,12 @@ public class UserCaller {
         restTemplate.delete(baseUrl + "/user/" + id);
     }
 
-    public boolean registerNewGroup(NewGroupDto newGroupDto) {
-        return restTemplate.postForObject(baseUrl + "/user/group", newGroupDto, Boolean.class);
+    public GroupCreatedDto registerNewGroup(NewGroupDto newGroupDto) {
+        return restTemplate.postForObject(baseUrl + "/user/group", newGroupDto, GroupCreatedDto.class);
     }
 
-    public boolean registerNewUser(NewUserDto newUserDto) {
-        return restTemplate.postForObject(baseUrl + "/user", newUserDto, Boolean.class);
+    public AppUser registerNewUser(NewUserDto newUserDto) {
+        return restTemplate.postForObject(baseUrl + "/user", newUserDto, AppUser.class);
     }
 
     public boolean addNewIcon(IconDto iconDto) {
