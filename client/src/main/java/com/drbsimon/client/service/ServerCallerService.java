@@ -18,10 +18,10 @@ import java.util.List;
 public class ServerCallerService {
     private final ServerCaller serverCaller;
 
-    public boolean registerNewGroup(String groupName, String adminName) {
+    public GroupCreatedDto registerNewGroup(String groupName, String adminName) {
         NewGroupDto newGroupDto = NewGroupDto.builder()
-                .groupName("New Group")
-                .userName("New Admin")
+                .groupName(groupName)
+                .userName(adminName)
                 .build();
         return serverCaller.registerNewGroup(newGroupDto);
     }

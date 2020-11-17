@@ -42,7 +42,7 @@ public class RequestController {
     }
 
     @PostMapping("/group")
-    public boolean registerNewGroup(@RequestBody NewGroupDto newGroupDto) {
+    public GroupCreatedDto registerNewGroup(@RequestBody NewGroupDto newGroupDto) {
         return userService.tryRegisterGroup(newGroupDto);
     }
 

@@ -4,6 +4,7 @@ import com.drbsimon.server.dao.AppUserDao;
 import com.drbsimon.server.dao.UserGroupDao;
 import com.drbsimon.server.model.*;
 import com.drbsimon.server.model.dto.AppUserDto;
+import com.drbsimon.server.model.dto.GroupCreatedDto;
 import com.drbsimon.server.model.dto.NewGroupDto;
 import com.drbsimon.server.model.dto.NewUserDto;
 import com.drbsimon.server.model.wrapper.AppUserWrapper;
@@ -43,13 +44,12 @@ public class UserService {
         return appUserDao.findBy(userId).orElse(new AppUser());
     }
 
-    public boolean tryRegisterGroup(NewGroupDto newGroupDto) {
+    public GroupCreatedDto tryRegisterGroup(NewGroupDto newGroupDto) {
         if (isGroupRegistrationRequestInvalid(newGroupDto)
                 || appUserDao.exists(newGroupDto.getUserName())
                 || userGroupDao.exists(newGroupDto.getGroupName())
-        ) return false;
-        saveNewGroup(newGroupDto);
-        return true;
+        ) return new GroupCreatedDto(null, null, false);
+        return saveNewGroup(newGroupDto);
     }
 
     public boolean tryRegisterNewUser(NewUserDto newUserDto) {
@@ -123,7 +123,7 @@ public class UserService {
                 && requester.getUserGroup().getId().equals(groupId);
     }
 
-    private void saveNewGroup(NewGroupDto newGroupDto) {
+    private GroupCreatedDto saveNewGroup(NewGroupDto newGroupDto) {
         AppUser newAdmin = AppUser.builder()
                 .name(newGroupDto.getUserName())
                 .role(Role.ADMIN)
@@ -141,6 +141,12 @@ public class UserService {
         MainMenu newMenu = mainMenuService.addMainMenuToNewUser(newAdmin);
         newAdmin.setMainMenu(newMenu);
         appUserDao.save(newAdmin);
+        GroupCreatedDto success = GroupCreatedDto.builder()
+                .appUser(newAdmin)
+                .userGroup(newGroup)
+                .isCreationSuccessful(true)
+                .build();
+        return success;
     }
 
     private void saveNewUser(NewUserDto newUserDto) {
