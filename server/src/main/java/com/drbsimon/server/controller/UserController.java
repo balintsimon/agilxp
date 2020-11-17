@@ -1,5 +1,6 @@
 package com.drbsimon.server.controller;
 
+import com.drbsimon.server.model.AppUser;
 import com.drbsimon.server.model.MainMenu;
 import com.drbsimon.server.model.dto.*;
 import com.drbsimon.server.model.wrapper.AppUserWrapper;
@@ -31,6 +32,11 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
+    public AppUser getUserById(@PathVariable Long id) {
+        return userService.getBy(id);
+    }
+
+    @GetMapping("/menu/{id}")
     public MainMenu getUserMainMenu(@PathVariable Long id) {
         return mainMenuService.getMainMenuByUser(id);
     }
