@@ -78,4 +78,13 @@ public class ServerCallerService {
                 .build();
         serverCaller.changeBackground(changeBackground);
     }
+
+    public boolean addNewIcon(String iconName, Long userId) {
+        IconDto newIcon = IconDto.builder()
+                .newIconName(iconName)
+                .oldIconName(iconName)
+                .userId(userId)
+                .build();
+        return serverCaller.addNewIcon(newIcon);
+    }
 }
