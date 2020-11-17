@@ -1,4 +1,4 @@
-package com.drbsimon.server.model.dto;
+package com.drbsimon.client.caller.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -2,13 +2,11 @@ package com.drbsimon.server.service;
 
 import com.drbsimon.server.dao.AppUserDao;
 import com.drbsimon.server.dao.UserGroupDao;
-import com.drbsimon.server.model.AppUser;
-import com.drbsimon.server.model.Role;
-import com.drbsimon.server.model.Theme;
-import com.drbsimon.server.model.UserGroup;
+import com.drbsimon.server.model.*;
 import com.drbsimon.server.model.dto.AppUserDto;
 import com.drbsimon.server.model.dto.NewGroupDto;
 import com.drbsimon.server.model.dto.NewUserDto;
+import com.drbsimon.server.model.wrapper.AppUserWrapper;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -29,6 +27,21 @@ public class UserService {
     private final MainMenuService mainMenuService;
 
     private static final String USER_ID_NOT_FOUND = "The given userId does not exist!";
+
+    public AppUserWrapper getAllUsers() {
+        List<AppUser> allUsers = appUserDao.findAll();
+        AppUserWrapper appUserWrapper = new AppUserWrapper();
+        appUserWrapper.setAppUsers(allUsers);
+        return appUserWrapper;
+    }
+
+    public AppUser getBy(String userName) {
+        return appUserDao.findBy(userName).orElse(new AppUser());
+    }
+
+    public AppUser getBy(Long userId) {
+        return appUserDao.findBy(userId).orElse(new AppUser());
+    }
 
     public boolean tryRegisterGroup(NewGroupDto newGroupDto) {
         if (isGroupRegistrationRequestInvalid(newGroupDto)
@@ -51,7 +64,7 @@ public class UserService {
     @Transactional
     public boolean modifyUserName(AppUserDto appUserDto) {
         if (isAppUserDtoInvalid(appUserDto)) return false;
-        AppUser modifiedUser = appUserDao.findBy(appUserDto.getId()).orElseThrow(
+        AppUser modifiedUser = appUserDao.findBy(appUserDto.getUserId()).orElseThrow(
                 () -> new EntityNotFoundException(USER_ID_NOT_FOUND)
         );
         if (modifiedUser.getName().equals(appUserDto.getName())) return true;
@@ -72,10 +85,10 @@ public class UserService {
     @Transactional
     public boolean changeAppUserTheme(AppUserDto appUserDto) {
         if (isAppUserDtoInvalid(appUserDto) || appUserDto.getTheme() == null) return false;
-        AppUser modifiedUser = appUserDao.findBy(appUserDto.getId()).orElseThrow(
+        AppUser modifiedUser = appUserDao.findBy(appUserDto.getUserId()).orElseThrow(
                 () -> new EntityNotFoundException(USER_ID_NOT_FOUND)
         );
-        if (modifiedUser.getName().equals(appUserDto.getName())) return true;
+        if (modifiedUser.getTheme().equals(appUserDto.getTheme())) return true;
         modifiedUser.setTheme(appUserDto.getTheme());
         appUserDao.save(modifiedUser);
         return true;
@@ -98,15 +111,15 @@ public class UserService {
     }
 
     private boolean isAppUserDtoInvalid(AppUserDto appUserDto) {
-        return appUserDto.getId() == null
+        return appUserDto.getUserId() == null
                 || appUserDto.getName() == null
                 || appUserDto.getName().isEmpty();
     }
 
     protected boolean isRequesterGroupAdmin(String requesterName, Long groupId) {
         AppUser requester = appUserDao.getBy(requesterName);
-        return requester == null
-                && requester.getRole() == Role.ADMIN
+        return requester != null
+                && requester.getRole().equals(Role.ADMIN)
                 && requester.getUserGroup().getId().equals(groupId);
     }
 
@@ -117,16 +130,17 @@ public class UserService {
                 .theme(Theme.DEFAULT)
                 .build();
 
-        mainMenuService.addMainMenuToNewUser(newAdmin);
-
         UserGroup newGroup = UserGroup.builder()
                 .name(newGroupDto.getGroupName())
                 .build();
 
         newAdmin.setUserGroup(newGroup);
         newGroup.setAppUsers(Arrays.asList(newAdmin));
-
         userGroupDao.save(newGroup);
+
+        MainMenu newMenu = mainMenuService.addMainMenuToNewUser(newAdmin);
+        newAdmin.setMainMenu(newMenu);
+        appUserDao.save(newAdmin);
     }
 
     private void saveNewUser(NewUserDto newUserDto) {
@@ -135,17 +149,13 @@ public class UserService {
                 .role(Role.USER)
                 .theme(Theme.DEFAULT)
                 .build();
-
-        mainMenuService.addMainMenuToNewUser(newUser);
-
         UserGroup existingGroup = userGroupDao.getBy(newUserDto.getGroupId());
-        List<AppUser> existingUsers = existingGroup.getAppUsers();
-
         newUser.setUserGroup(existingGroup);
-
-        existingUsers.add(newUser);
-        existingGroup.setAppUsers(existingUsers);
-
         userGroupDao.save(existingGroup);
+        appUserDao.save(newUser);
+
+        MainMenu newMenu = mainMenuService.addMainMenuToNewUser(newUser);
+        newUser.setMainMenu(newMenu);
+        appUserDao.save(newUser);
     }
 }

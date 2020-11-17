@@ -1,6 +1,7 @@
 package com.drbsimon.server.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -22,41 +23,42 @@ public class MainMenu {
     @OneToOne
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
+    @JsonBackReference
     private AppUser appUser;
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinTable(
             name="main_menu_sub_menus",
             joinColumns = @JoinColumn(name = "mainmenu_id"),
             inverseJoinColumns = @JoinColumn(name = "submenu_id")
     )
     @EqualsAndHashCode.Exclude
-    @JsonBackReference
+    @JsonManagedReference
     private List<SubMenu> subMenus;
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinTable(
             name="menu_icons",
             joinColumns = @JoinColumn(name = "mainmenu_id"),
             inverseJoinColumns = @JoinColumn(name = "icon_id")
     )
     @EqualsAndHashCode.Exclude
-    @JsonBackReference
+    @JsonManagedReference
     private List<Icon> icons;
 
     @ManyToMany
     @EqualsAndHashCode.Exclude
-    @JsonBackReference
+    @JsonManagedReference
     private List<Application> applications;
 
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     @EqualsAndHashCode.Exclude
-    @JsonBackReference
+    @JsonManagedReference
     private Background background;
 
     @OneToMany(mappedBy = "mainMenu", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @JsonBackReference
+    @JsonManagedReference
     private List<Background> backgrounds;
 }

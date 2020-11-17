@@ -1,6 +1,6 @@
-package com.drbsimon.server.model.dto;
+package com.drbsimon.client.caller.model.dto;
 
-import com.drbsimon.server.model.Theme;
+import com.drbsimon.client.caller.model.Theme;
 import lombok.*;
 
 @Data

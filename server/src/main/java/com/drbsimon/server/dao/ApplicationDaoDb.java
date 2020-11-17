@@ -22,6 +22,11 @@ public class ApplicationDaoDb implements ApplicationDao {
     }
 
     @Override
+    public Application getBy(String name) {
+        return repository.getByName(name);
+    }
+
+    @Override
     public void save(Application application) {
         repository.save(application);
     }

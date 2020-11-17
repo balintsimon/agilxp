@@ -1,7 +1,6 @@
 package com.drbsimon.server.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,7 +20,7 @@ public class Icon {
     private String name;
 
     @EqualsAndHashCode.Exclude
-    @JsonManagedReference
+    @JsonBackReference
     @ManyToMany(mappedBy = "subMenus")
     private List<MainMenu> mainMenus;
 }

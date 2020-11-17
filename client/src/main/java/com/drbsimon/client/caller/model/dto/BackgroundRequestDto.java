@@ -1,4 +1,4 @@
-package com.drbsimon.server.model.dto;
+package com.drbsimon.client.caller.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,8 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ApplicationRequestDto {
+public class BackgroundRequestDto {
     private Long userId;
-    private String applicationName;
-    private Long applicationId;
+    private String BackgroundName;
 }

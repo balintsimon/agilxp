@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 @RequiredArgsConstructor
@@ -21,25 +22,35 @@ public class IconService {
     private final MainMenuService mainMenuService;
 
     public boolean addNewIcon(IconDto iconDto) {
+        if (iconDto.getUserId() == null
+                || iconDto.getNewIconName() == null
+                || iconDto.getNewIconName().isEmpty()
+        ) return false;
         MainMenu userMainMenu = mainMenuService.getMainMenuByUser(iconDto.getUserId());
+        if (userMainMenu == null || userMainMenu.getId() == null) return false;
         List<Icon> icons = userMainMenu.getIcons();
-
+        if (isNewItemNameDatabase(icons, iconDto.getNewIconName())) return false;
+        
         Icon newIcon = Icon.builder()
                 .name(iconDto.getNewIconName())
                 .mainMenus(Arrays.asList(userMainMenu))
                 .build();
+        iconDao.save(newIcon);
 
         icons.add(newIcon);
-
         userMainMenu.setIcons(icons);
-
         mainMenuService.save(userMainMenu);
-        iconDao.save(newIcon);
         return true;
     }
 
     public boolean modifyIcon(IconDto iconDto) {
+        if (iconDto.getNewIconName() == null
+                || iconDto.getOldIconName() == null
+                || iconDto.getNewIconName().isEmpty()
+                || iconDto.getOldIconName().isEmpty()
+        ) return false;
         Icon iconToModify = iconDao.getBy(iconDto.getOldIconName());
+        if (iconToModify == null || iconToModify.getId() == null) return false;
         iconToModify.setName(iconDto.getNewIconName());
         iconDao.save(iconToModify);
         return true;
@@ -47,5 +58,12 @@ public class IconService {
 
     public void removeIcon(String name) {
         iconDao.remove(name);
+    }
+
+    private boolean isNewItemNameDatabase(List<Icon> inDatabase, String newName) {
+        List<Icon> foundWithName = inDatabase.stream()
+                .filter(actualItem -> actualItem.getName().equals(newName))
+                .collect(Collectors.toList());
+        return foundWithName.size() != 0;
     }
 }
