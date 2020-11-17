@@ -1,7 +1,6 @@
 package com.drbsimon.client;
 
-import com.drbsimon.client.caller.ServerCaller;
-import com.drbsimon.client.service.ServerCallerService;
+import com.drbsimon.client.tester.TesterRunner;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -15,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 @Slf4j
 public class ClientApplication implements CommandLineRunner {
     @Autowired
-    private ServerCallerService serverCallerService;
+    private TesterRunner testerRunner;
 
     @Bean
     @LoadBalanced
@@ -30,5 +29,6 @@ public class ClientApplication implements CommandLineRunner {
     @Override
     public void run(String... args) {
         log.info("EXECUTING test application");
+        testerRunner.run();
     }
 }
