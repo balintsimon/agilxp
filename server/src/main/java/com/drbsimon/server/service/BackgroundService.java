@@ -32,8 +32,7 @@ public class BackgroundService {
 
         userMainMenu.setBackgrounds(backgrounds);
 
-        mainMenuService.save(userMainMenu);
-//        backgroundDao.save(newBackground);
+        backgroundDao.save(newBackground);
         return true;
     }
 
