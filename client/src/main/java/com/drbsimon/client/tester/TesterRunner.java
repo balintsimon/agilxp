@@ -1,6 +1,7 @@
 package com.drbsimon.client.tester;
 
 import com.drbsimon.client.caller.model.AppUser;
+import com.drbsimon.client.caller.model.Application;
 import com.drbsimon.client.caller.model.Theme;
 import com.drbsimon.client.caller.model.dto.GroupCreatedDto;
 import com.drbsimon.client.service.ServerCallerService;
@@ -9,12 +10,16 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Random;
+
 @Data
 @RequiredArgsConstructor
 @Service
 @Slf4j
 public class TesterRunner {
     private final ServerCallerService serverCallerService;
+    private Random random = new Random();
 
     public void run() {
         stageOne();
@@ -58,5 +63,16 @@ public class TesterRunner {
         serverCallerService.changeBackground(user.getId(), backgroundName);
         serverCallerService.addNewIcon(iconName, user.getId());
         return serverCallerService.getUserBy(user.getId());
+    }
+
+
+    private void runRandomApplication(AppUser user) {
+        List<Application> apps = user.getMainMenu().getApplications();
+        if (apps.size() > 0) {
+            int randomAppIndex = random.nextInt(apps.size());
+            Application application = apps.get(randomAppIndex);
+            String appName = serverCallerService.runApplication(user.getId(), application.getName(), application.getId());
+            System.out.println(String.format("%s ran app titled '%s'", user.getName(), appName));
+        }
     }
 }
