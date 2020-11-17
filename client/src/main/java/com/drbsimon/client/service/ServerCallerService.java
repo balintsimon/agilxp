@@ -62,4 +62,12 @@ public class ServerCallerService {
                 .build();
         serverCaller.changeUserTheme(userDto);
     }
+
+    public boolean addNewBackground(Long userId, String backgroundName) {
+        BackgroundRequestDto newBackground = BackgroundRequestDto.builder()
+                .userId(userId)
+                .BackgroundName(backgroundName)
+                .build();
+        return serverCaller.addNewBackground(newBackground);
+    }
 }
