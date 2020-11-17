@@ -1,6 +1,9 @@
 package com.drbsimon.client;
 
+import com.drbsimon.client.caller.ServerCaller;
+import com.drbsimon.client.service.ServerCallerService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,6 +14,9 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @Slf4j
 public class ClientApplication implements CommandLineRunner {
+    @Autowired
+    private ServerCallerService serverCallerService;
+
     @Bean
     @LoadBalanced
     public RestTemplate restTemplate() {
