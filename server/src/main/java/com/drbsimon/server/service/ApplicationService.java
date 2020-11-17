@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 @RequiredArgsConstructor
@@ -35,6 +36,8 @@ public class ApplicationService {
         if (userMainMenu == null || userMainMenu.getId() == null) return false;
 
         List<Application> applications = userMainMenu.getApplications();
+        if (isNewItemNameDatabase(applications, applicationRequestDto.getApplicationName())) return false;
+
         Application newApplication = Application.builder()
                 .name(applicationRequestDto.getApplicationName())
                 .mainMenus(Arrays.asList(userMainMenu))
@@ -76,5 +79,12 @@ public class ApplicationService {
         AppUser appUser = userService.getBy(applicationRequestDto.getUserId());
         appUser.setLastRunAppName(app.getName());
         return applicationDao.getBy(app.getId()).getName();
+    }
+
+    private boolean isNewItemNameDatabase(List<Application> inDatabase, String newName) {
+        List<Application> foundWithName = inDatabase.stream()
+                .filter(actualItem -> actualItem.getName().equals(newName))
+                .collect(Collectors.toList());
+        return foundWithName.size() != 0;
     }
 }

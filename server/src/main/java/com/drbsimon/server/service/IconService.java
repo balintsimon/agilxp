@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 @RequiredArgsConstructor
@@ -28,7 +29,7 @@ public class IconService {
         MainMenu userMainMenu = mainMenuService.getMainMenuByUser(iconDto.getUserId());
         if (userMainMenu == null || userMainMenu.getId() == null) return false;
         List<Icon> icons = userMainMenu.getIcons();
-
+        if (isNewItemNameDatabase(icons, iconDto.getNewIconName())) return false;
         
         Icon newIcon = Icon.builder()
                 .name(iconDto.getNewIconName())
@@ -57,5 +58,12 @@ public class IconService {
 
     public void removeIcon(String name) {
         iconDao.remove(name);
+    }
+
+    private boolean isNewItemNameDatabase(List<Icon> inDatabase, String newName) {
+        List<Icon> foundWithName = inDatabase.stream()
+                .filter(actualItem -> actualItem.getName().equals(newName))
+                .collect(Collectors.toList());
+        return foundWithName.size() != 0;
     }
 }

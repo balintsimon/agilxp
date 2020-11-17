@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 @RequiredArgsConstructor
@@ -27,6 +28,7 @@ public class BackgroundService {
         MainMenu userMainMenu = mainMenuService.getMainMenuByUser(backgroundRequestDto.getUserId());
         if (userMainMenu == null || userMainMenu.getId() == null) return false;
         List<Background> backgrounds = userMainMenu.getBackgrounds();
+        if (isNewItemNameDatabase(backgrounds, backgroundRequestDto.getBackgroundName())) return false;
 
         Background newBackground = Background.builder()
                 .name(backgroundRequestDto.getBackgroundName())
@@ -57,5 +59,12 @@ public class BackgroundService {
         mainMenuService.save(userMainMenu);
         backgroundDao.save(background);
         return true;
+    }
+
+    private boolean isNewItemNameDatabase(List<Background> inDatabase, String newName) {
+        List<Background> foundWithName = inDatabase.stream()
+                .filter(actualItem -> actualItem.getName().equals(newName))
+                .collect(Collectors.toList());
+        return foundWithName.size() != 0;
     }
 }
