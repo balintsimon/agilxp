@@ -70,4 +70,12 @@ public class ServerCallerService {
                 .build();
         return serverCaller.addNewBackground(newBackground);
     }
+
+    public void changeBackground(Long userId, String backgroundName) {
+        BackgroundRequestDto changeBackground = BackgroundRequestDto.builder()
+                .BackgroundName(backgroundName)
+                .userId(userId)
+                .build();
+        serverCaller.changeBackground(changeBackground);
+    }
 }
