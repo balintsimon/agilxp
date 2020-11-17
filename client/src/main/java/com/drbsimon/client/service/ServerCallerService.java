@@ -18,6 +18,10 @@ import java.util.List;
 public class ServerCallerService {
     private final ServerCaller serverCaller;
 
+    public List<AppUser> getAllUsers() {
+        return serverCaller.getAllAppUsers();
+    }
+
     public GroupCreatedDto registerNewGroup(String groupName, String adminName) {
         NewGroupDto newGroupDto = NewGroupDto.builder()
                 .groupName(groupName)
@@ -26,7 +30,7 @@ public class ServerCallerService {
         return serverCaller.registerNewGroup(newGroupDto);
     }
 
-    public boolean registerNewUser(String adminName, String userName, Long groupId) {
+    public AppUser registerNewUser(String adminName, String userName, Long groupId) {
         NewUserDto newUserToGroup = NewUserDto.builder()
                 .requesterName(adminName)
                 .groupId(groupId)
