@@ -1,11 +1,15 @@
 package com.drbsimon.client.service;
 
 import com.drbsimon.client.caller.ServerCaller;
+import com.drbsimon.client.caller.model.AppUser;
+import com.drbsimon.client.caller.model.Theme;
 import com.drbsimon.client.caller.model.dto.*;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Data
 @RequiredArgsConstructor
@@ -29,5 +33,9 @@ public class ServerCallerService {
                 .newUserName(userName)
                 .build();
         return serverCaller.registerNewUser(newUserToGroup);
+    }
+
+    public AppUser getUserBy(Long id) {
+        return serverCaller.getUserById(id);
     }
 }
