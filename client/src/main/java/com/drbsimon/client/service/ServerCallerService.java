@@ -45,4 +45,12 @@ public class ServerCallerService {
             System.out.println(currentUser);
         }
     }
+
+    public void changeUserName(Long userId, String name) {
+        AppUserDto appUserDto = AppUserDto.builder()
+                .userId(userId)
+                .name(name)
+                .build();
+        serverCaller.changeUserName(appUserDto);
+    }
 }
