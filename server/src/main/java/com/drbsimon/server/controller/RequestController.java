@@ -27,7 +27,7 @@ public class RequestController {
     }
 
     @PostMapping
-    public boolean registerNewUser(@RequestBody NewUserDto newUserDto) {
+    public AppUser registerNewUser(@RequestBody NewUserDto newUserDto) {
         return userService.tryRegisterNewUser(newUserDto);
     }
 

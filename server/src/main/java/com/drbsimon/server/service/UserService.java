@@ -52,13 +52,12 @@ public class UserService {
         return saveNewGroup(newGroupDto);
     }
 
-    public boolean tryRegisterNewUser(NewUserDto newUserDto) {
+    public AppUser tryRegisterNewUser(NewUserDto newUserDto) {
         if (isNewUserRegistrationRequestInvalid(newUserDto)
                 || appUserDao.exists(newUserDto.getNewUserName())
                 || !isRequesterGroupAdmin(newUserDto.getRequesterName(), newUserDto.getGroupId())
-        ) return false;
-        saveNewUser(newUserDto);
-        return true;
+        ) return new AppUser();
+        return saveNewUser(newUserDto);
     }
 
     @Transactional
@@ -149,7 +148,7 @@ public class UserService {
         return success;
     }
 
-    private void saveNewUser(NewUserDto newUserDto) {
+    private AppUser saveNewUser(NewUserDto newUserDto) {
         AppUser newUser = AppUser.builder()
                 .name(newUserDto.getNewUserName())
                 .role(Role.USER)
@@ -163,5 +162,6 @@ public class UserService {
         MainMenu newMenu = mainMenuService.addMainMenuToNewUser(newUser);
         newUser.setMainMenu(newMenu);
         appUserDao.save(newUser);
+        return newUser;
     }
 }
