@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/user")
 @RequiredArgsConstructor
 @Slf4j
-public class UserController {
+public class RequestController {
     private final UserService userService;
     private final IconService iconService;
     private final MainMenuService mainMenuService;
