@@ -3,7 +3,9 @@ package com.drbsimon.client.tester;
 import com.drbsimon.client.caller.model.AppUser;
 import com.drbsimon.client.caller.model.Application;
 import com.drbsimon.client.caller.model.Theme;
+import com.drbsimon.client.caller.model.UserGroup;
 import com.drbsimon.client.caller.model.dto.GroupCreatedDto;
+import com.drbsimon.client.caller.model.dto.NewGroupDto;
 import com.drbsimon.client.service.ServerCallerService;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -22,10 +24,13 @@ public class TesterRunner {
     private Random random = new Random();
 
     public void run() {
-        stageOne();
+        GroupCreatedDto adminGroup = stageOne();
+        if (adminGroup != null) {
+            stageTwo(adminGroup);
+        }
     }
 
-    private void stageOne() {
+    private GroupCreatedDto stageOne() {
         String adminName = "Dummy Admin";
         String groupName = "Dummy Group";
         Theme chosenTheme = Theme.DAY;
@@ -45,8 +50,35 @@ public class TesterRunner {
             serverCallerService.addNewApplication(app2, admin.getId());
             admin = customizeUserMenu(admin, chosenTheme, backgroundName, iconName);
             serverCallerService.printAllUsers();
+            newGroupCreated.setAppUser(admin);
+            return newGroupCreated;
         }
+        return null;
+    }
 
+    private void stageTwo(GroupCreatedDto groupCreatedDto) {
+        System.out.println("2. STAGE: register new users");
+        AppUser admin = groupCreatedDto.getAppUser();
+        UserGroup userGroup = groupCreatedDto.getUserGroup();
+
+        String userName = "New user";
+        Theme theme = Theme.values()[random.nextInt(Theme.values().length)];
+        String backgroundName = "User background";
+        String iconName = "User icon";
+        AppUser newUser = createAndCustomizeNewUser(admin, userName, theme, backgroundName, iconName);
+        serverCallerService.addNewApplication("User app1", newUser.getId());
+        serverCallerService.addNewApplication("User app2", newUser.getId());
+        serverCallerService.addNewApplication("User app3", newUser.getId());
+        newUser = serverCallerService.getUserBy(newUser.getId());
+        runRandomApplication(newUser);
+    }
+
+    private AppUser createAndCustomizeNewUser(AppUser admin, String userName, Theme theme, String backgroundName, String iconName) {
+        AppUser newUserCreated = serverCallerService.registerNewUser(admin.getName(), userName, admin.getUserGroup().getId());
+        if (newUserCreated.getId() != null) {
+            return customizeUserMenu(newUserCreated, theme, backgroundName, iconName);
+        }
+        return null;
     }
 
     /**
