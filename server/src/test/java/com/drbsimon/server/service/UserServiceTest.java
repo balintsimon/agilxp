@@ -110,24 +110,6 @@ class UserServiceTest {
         assertThat(actual).isEqualTo(expected);
     }
 
-//    @Test
-//    public void testSuccessfulNewGroupRegister() {
-//        String userName = "Username";
-//        String groupName = "Group";
-//        GroupCreatedDto expected = new GroupCreatedDto(new AppUser(), null, false);
-//
-//        NewGroupDto newGroupDto = NewGroupDto.builder()
-//                .userName(userName)
-//                .groupName(groupName)
-//                .build();
-//
-//        given(appUserDao.exists(userName)).willReturn(false);
-//        given(userGroupDao.exists(groupName)).willReturn(false);
-//        GroupCreatedDto actual = service.tryRegisterGroup(newGroupDto);
-//
-//        assertThat(actual).isEqualTo(expected);
-//    }
-
     @Test
     public void testAddNewUserWithNullInForm() {
         String newUserName = null;
@@ -250,33 +232,4 @@ class UserServiceTest {
 
         assertThat(actual).isEqualTo(expected);
     }
-
-//    @Test
-//    public void testNewUserSuccessfulSave() {
-//        String newUserName = "New User";
-//        String adminName = "Admin";
-//        Long groupId = 1L;
-//        boolean expected = true;
-//
-//        NewUserDto newUserDto = NewUserDto.builder()
-//                .newUserName(newUserName)
-//                .requesterName(adminName)
-//                .groupId(groupId)
-//                .build();
-//
-//        given(appUserDao.getBy(adminName)).willReturn(AppUser.builder()
-//                .name(adminName)
-//                .role(Role.ADMIN)
-//                .theme(Theme.DEFAULT)
-//                .userGroup(UserGroup.builder()
-//                        .name("group")
-//                        .id(groupId)
-//                        .build())
-//                .build());
-//        given(appUserDao.exists(newUserName)).willReturn(false);
-//
-//        boolean actual = service.tryRegisterNewUser(newUserDto);
-//
-//        assertThat(actual).isEqualTo(expected);
-//    }
 }
