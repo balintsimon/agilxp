@@ -43,8 +43,8 @@ public class ServerCaller {
         return restTemplate.postForObject(baseUrl + "/user/group", newGroupDto, GroupCreatedDto.class);
     }
 
-    public boolean registerNewUser(NewUserDto newUserDto) {
-        return restTemplate.postForObject(baseUrl + "/user", newUserDto, Boolean.class);
+    public AppUser registerNewUser(NewUserDto newUserDto) {
+        return restTemplate.postForObject(baseUrl + "/user", newUserDto, AppUser.class);
     }
 
     public boolean addNewIcon(IconDto iconDto) {
