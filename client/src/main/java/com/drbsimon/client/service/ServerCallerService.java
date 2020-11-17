@@ -21,4 +21,13 @@ public class ServerCallerService {
                 .build();
         return serverCaller.registerNewGroup(newGroupDto);
     }
+
+    public boolean registerNewUser(String adminName, String userName, Long groupId) {
+        NewUserDto newUserToGroup = NewUserDto.builder()
+                .requesterName(adminName)
+                .groupId(groupId)
+                .newUserName(userName)
+                .build();
+        return serverCaller.registerNewUser(newUserToGroup);
+    }
 }
