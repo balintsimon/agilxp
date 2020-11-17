@@ -95,4 +95,14 @@ public class ServerCallerService {
                 .build();
         return serverCaller.addNewApplication(newApp);
     }
+
+    public void runApplication(Long userId, String applicationName, Long applicationId) {
+        ApplicationRequestDto requestDto = ApplicationRequestDto.builder()
+                .userId(userId)
+                .applicationName(applicationName)
+                .applicationId(applicationId)
+                .build();
+        String appName = serverCaller.runApplication(requestDto);
+        System.out.println("App '" + appName + "' was run by a user.");
+    }
 }
