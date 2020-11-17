@@ -38,4 +38,11 @@ public class ServerCallerService {
     public AppUser getUserBy(Long id) {
         return serverCaller.getUserById(id);
     }
+
+    public void printAllUsers() {
+        List<AppUser> allUsers = serverCaller.getAllAppUsers();
+        for (AppUser currentUser : allUsers) {
+            System.out.println(currentUser);
+        }
+    }
 }
