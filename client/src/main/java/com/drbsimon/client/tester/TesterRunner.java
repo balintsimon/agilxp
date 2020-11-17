@@ -38,7 +38,7 @@ public class TesterRunner {
             System.out.println("Add applications to user main menu.");
             serverCallerService.addNewApplication(app1, admin.getId());
             serverCallerService.addNewApplication(app2, admin.getId());
-            customizeUserMenu(admin, chosenTheme, backgroundName, iconName);
+            admin = customizeUserMenu(admin, chosenTheme, backgroundName, iconName);
             serverCallerService.printAllUsers();
         }
 
@@ -51,11 +51,12 @@ public class TesterRunner {
      * @param backgroundName Background name to add and swtich to
      * @param iconName Icon name to add
      */
-    private void customizeUserMenu(AppUser user, Theme theme, String backgroundName, String iconName) {
+    private AppUser customizeUserMenu(AppUser user, Theme theme, String backgroundName, String iconName) {
         System.out.println("Customizing user " + user.getName() + "'s main menu.");
         serverCallerService.changeUserTheme(user.getName(), user.getId(), theme);
         serverCallerService.addNewBackground(user.getId(), backgroundName);
         serverCallerService.changeBackground(user.getId(), backgroundName);
         serverCallerService.addNewIcon(iconName, user.getId());
+        return serverCallerService.getUserBy(user.getId());
     }
 }
