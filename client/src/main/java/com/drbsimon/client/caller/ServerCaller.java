@@ -16,7 +16,7 @@ import java.util.List;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class UserCaller {
+public class ServerCaller {
     private final RestTemplate restTemplate;
 
     @Value("${backend.url}")
