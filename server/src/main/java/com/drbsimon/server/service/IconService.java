@@ -23,18 +23,16 @@ public class IconService {
     public boolean addNewIcon(IconDto iconDto) {
         MainMenu userMainMenu = mainMenuService.getMainMenuByUser(iconDto.getUserId());
         List<Icon> icons = userMainMenu.getIcons();
-
+        
         Icon newIcon = Icon.builder()
                 .name(iconDto.getNewIconName())
                 .mainMenus(Arrays.asList(userMainMenu))
                 .build();
+        iconDao.save(newIcon);
 
         icons.add(newIcon);
-
         userMainMenu.setIcons(icons);
-
         mainMenuService.save(userMainMenu);
-        iconDao.save(newIcon);
         return true;
     }
 
