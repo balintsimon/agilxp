@@ -20,7 +20,12 @@ public class BackgroundService {
     private final MainMenuService mainMenuService;
 
     public boolean addNewBackground(BackgroundRequestDto backgroundRequestDto) {
+        if (backgroundRequestDto.getUserId() == null
+                || backgroundRequestDto.getBackgroundName() == null
+                || backgroundRequestDto.getBackgroundName().isEmpty()
+        ) return false;
         MainMenu userMainMenu = mainMenuService.getMainMenuByUser(backgroundRequestDto.getUserId());
+        if (userMainMenu == null || userMainMenu.getId() == null) return false;
         List<Background> backgrounds = userMainMenu.getBackgrounds();
 
         Background newBackground = Background.builder()
@@ -37,8 +42,14 @@ public class BackgroundService {
     }
 
     public boolean setBackgroundToMainMenu(BackgroundRequestDto backgroundRequestDto) {
+        if (backgroundRequestDto.getUserId() == null
+                || backgroundRequestDto.getBackgroundName() == null
+                || backgroundRequestDto.getBackgroundName().isEmpty()
+        ) return false;
         MainMenu userMainMenu = mainMenuService.getMainMenuByUser(backgroundRequestDto.getUserId());
+        if (userMainMenu == null || userMainMenu.getId() == null) return false;
         Background background = backgroundDao.getBy(backgroundRequestDto.getBackgroundName());
+        if (background == null || background.getId() == null) return false;
 
         userMainMenu.setBackground(background);
         background.setChosenMainMenu(userMainMenu);

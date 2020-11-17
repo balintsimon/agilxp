@@ -21,8 +21,14 @@ public class IconService {
     private final MainMenuService mainMenuService;
 
     public boolean addNewIcon(IconDto iconDto) {
+        if (iconDto.getUserId() == null
+                || iconDto.getNewIconName() == null
+                || iconDto.getNewIconName().isEmpty()
+        ) return false;
         MainMenu userMainMenu = mainMenuService.getMainMenuByUser(iconDto.getUserId());
+        if (userMainMenu == null || userMainMenu.getId() == null) return false;
         List<Icon> icons = userMainMenu.getIcons();
+
         
         Icon newIcon = Icon.builder()
                 .name(iconDto.getNewIconName())
@@ -37,7 +43,13 @@ public class IconService {
     }
 
     public boolean modifyIcon(IconDto iconDto) {
+        if (iconDto.getNewIconName() == null
+                || iconDto.getOldIconName() == null
+                || iconDto.getNewIconName().isEmpty()
+                || iconDto.getOldIconName().isEmpty()
+        ) return false;
         Icon iconToModify = iconDao.getBy(iconDto.getOldIconName());
+        if (iconToModify == null || iconToModify.getId() == null) return false;
         iconToModify.setName(iconDto.getNewIconName());
         iconDao.save(iconToModify);
         return true;

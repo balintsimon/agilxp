@@ -26,28 +26,35 @@ public class ApplicationService {
     private final UserService userService;
 
     public boolean addNewApplication(ApplicationRequestDto applicationRequestDto) {
-        MainMenu userMainMenu = mainMenuService.getMainMenuByUser(applicationRequestDto.getUserId());
-        List<Application> applications = userMainMenu.getApplications();
+        if (applicationRequestDto.getUserId() == null
+                || applicationRequestDto.getApplicationName() == null
+                || applicationRequestDto.getApplicationName().isEmpty()
+        ) return false;
 
+        MainMenu userMainMenu = mainMenuService.getMainMenuByUser(applicationRequestDto.getUserId());
+        if (userMainMenu == null || userMainMenu.getId() == null) return false;
+
+        List<Application> applications = userMainMenu.getApplications();
         Application newApplication = Application.builder()
                 .name(applicationRequestDto.getApplicationName())
                 .mainMenus(Arrays.asList(userMainMenu))
                 .build();
-
         applications.add(newApplication);
-
         userMainMenu.setApplications(applications);
-
         applicationDao.save(newApplication);
         mainMenuService.save(userMainMenu);
         return true;
     }
 
     public ApplicationWrapper getAllApplicationsOfUser(ApplicationRequestDto applicationRequestDto) {
+        ApplicationWrapper applicationWrapper = new ApplicationWrapper();
+        if (applicationRequestDto.getUserId() == null) return applicationWrapper;
+
         MainMenu userMainMenu = mainMenuService.getMainMenuByUser(applicationRequestDto.getUserId());
+        if (userMainMenu == null || userMainMenu.getId() == null) return applicationWrapper;
+
         List<Application> applications = userMainMenu.getApplications();
         List<ApplicationDto> applicationDtos = new ArrayList<>();
-
         for (Application currentApplication : applications) {
                 ApplicationDto currentDto = ApplicationDto.builder()
                         .id(currentApplication.getId())
@@ -56,13 +63,15 @@ public class ApplicationService {
                         .build();
                 applicationDtos.add(currentDto);
         }
-
-        ApplicationWrapper applicationWrapper = new ApplicationWrapper();
         applicationWrapper.setApplications(applicationDtos);
         return applicationWrapper;
     }
 
     public String runApplication(ApplicationRequestDto applicationRequestDto) {
+        if (applicationRequestDto.getUserId() == null
+                || applicationRequestDto.getApplicationId() == null
+        ) return null;
+
         Application app = applicationDao.getBy(applicationRequestDto.getApplicationId());
         AppUser appUser = userService.getBy(applicationRequestDto.getUserId());
         appUser.setLastRunAppName(app.getName());
