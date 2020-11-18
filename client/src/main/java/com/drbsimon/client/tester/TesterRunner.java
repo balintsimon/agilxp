@@ -4,16 +4,16 @@ import com.drbsimon.client.caller.model.AppUser;
 import com.drbsimon.client.caller.model.Application;
 import com.drbsimon.client.caller.model.Theme;
 import com.drbsimon.client.caller.model.dto.GroupCreatedDto;
+import com.drbsimon.client.model.DataLine;
 import com.drbsimon.client.service.ServerCallerService;
+import com.drbsimon.client.service.TablePrinterService;
+import com.drbsimon.client.service.Util;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 @Data
 @RequiredArgsConstructor
@@ -21,6 +21,7 @@ import java.util.Random;
 @Slf4j
 public class TesterRunner {
     private final ServerCallerService serverCallerService;
+    private final TablePrinterService tablePrinterService;
     private Random random = new Random();
 
     /**
@@ -32,7 +33,7 @@ public class TesterRunner {
             stageTwo(adminGroup);
         }
         runRandomUserApps();
-        serverCallerService.printAllUsers();
+        stageThree();
     }
 
     /**
@@ -41,13 +42,13 @@ public class TesterRunner {
      * @return Created admin user and group that it admins.
      */
     private GroupCreatedDto stageOne() {
-        String adminName = "Group Admin";
-        String groupName = "Household";
+        String adminName = "Adam Savage";
+        String groupName = "M5 Industries";
         Theme chosenTheme = Theme.DAY;
         String backgroundName = "Office";
         String iconName = "Chair";
 
-        String app1 = adminName + "'s Settings";
+        String app1 = "Table saw";
         String app2 = "IntelliJ IDEA";
 
         log.info("1st STAGE: register new admin");
@@ -90,6 +91,16 @@ public class TesterRunner {
                 serverCallerService.addNewApplication(applicationNames.get(i * 2 + 1), newUser.getId());
             }
         }
+    }
+
+    /**
+     * Print table of customized user data
+     */
+    private void stageThree() {
+        log.info("3rd STAGE: table output");
+        List<AppUser> allUsers = serverCallerService.getAllUsers();
+        List<DataLine> allData = Util.convertAppUsersToDataLine(allUsers);
+        tablePrinterService.createTable(allData);
     }
 
     /**
@@ -146,7 +157,7 @@ public class TesterRunner {
         List<String> userNames = Arrays.asList(
                 "Smith", "Kevin", "Tracy", "Jenny", "Tom", "Gabi", "Sofia", "Katy", "Zoe", "Jodie", "Adam", "Greg"
         );
-        return randomizeList(userNames);
+        return Util.randomizeList(userNames);
     }
 
     private List<String> generateRandomApplicationNames() {
@@ -156,7 +167,7 @@ public class TesterRunner {
                 "Terminal", "DockerHub", "e-Szigno", "git", "Visual Studio Code", "Discord", "Libre Office",
                 "PyCharm", "WebStorm", "Android Studio", "GNU", "Calibre", "YouTube", "Camera", "Ski Tracks"
         );
-        return randomizeList(appNames);
+        return Util.randomizeList(appNames);
     }
 
     private List<String> generateRandomBackgroundNames() {
@@ -164,7 +175,7 @@ public class TesterRunner {
                 "Hike", "Hills", "Snowboard", "Snow", "Scuba Diver", "Space", "intel inside", "random cat", "my_bike",
                 "stray dog", "paraglider", "KFC", "no trespassers", "WARNING", "CV", "Basil pot", "Window", "Apple"
         );
-        return randomizeList(backgroundNames);
+        return Util.randomizeList(backgroundNames);
     }
 
     private List<String> generateRandomIconNames() {
@@ -172,11 +183,6 @@ public class TesterRunner {
                 "Stripes", "Window", "Apple", "Guitar", "Dot", "Red dot", "Hamburger", "Exclamation mark", "Square",
                 "Question mark", "Eyes", "Ring", "Black Point", "White square", "Noise", "Leaf"
         );
-        return randomizeList(iconNames);
-    }
-
-    private List<String> randomizeList(List<String> list) {
-        Collections.shuffle(list);
-        return list;
+        return Util.randomizeList(iconNames);
     }
 }
