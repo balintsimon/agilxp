@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3bd17887-cc8c-4976-af3d-eb5562f897f2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/BlockBuster/BlockBuster.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/BlockBuster/src/main/java/com/codecool/blockbuster/Store.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/BlockBuster/src/main/java/com/codecool/blockbuster/product/Movie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/BlockBuster/src/main/java/com/codecool/blockbuster/product/Platform.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/BlockBuster/src/main/java/com/codecool/blockbuster/product/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/FarmOnMars/FarmOnMars.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/FarmOnMars/src/main/java/org/codecool/papractice/Farm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/FarmOnMars/src/main/java/org/codecool/papractice/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/FarmOnMars/src/main/java/org/codecool/papractice/plant/Almond.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/FarmOnMars/src/main/java/org/codecool/papractice/plant/Evergreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/FarmOnMars/src/main/java/org/codecool/papractice/plant/Juniper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/FarmOnMars/src/main/java/org/codecool/papractice/plant/Plant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/FarmOnMars/src/main/java/org/codecool/papractice/plant/Spruce.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/FarmOnMars/src/main/java/org/codecool/papractice/plant/attribute/Rot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/FarmOnMars/src/main/java/org/codecool/papractice/plant/attribute/Shroom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/FarmOnMars2/FarmOnMars2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/FarmOnMars2/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/FarmOnMars2/src/main/java/com/codecool/farm/Farm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/FarmOnMars2/src/main/java/com/codecool/farm/plant/Almond.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/FarmOnMars2/src/main/java/com/codecool/farm/plant/Evergreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/FarmOnMars2/src/main/java/com/codecool/farm/plant/Juniper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/FarmOnMars2/src/main/java/com/codecool/farm/plant/Plant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/FarmOnMars2/src/main/java/com/codecool/farm/plant/Rot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/FarmOnMars2/src/main/java/com/codecool/farm/plant/Shroom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/FarmOnMars2/src/main/java/com/codecool/farm/plant/Spruce.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/FarmOnMars3/FarmOnMars3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/FarmOnMars3/src/com/codecool/farm/Farm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/HeadCounter/HeadCounter.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/HeadCounter/src/com/codecool/office/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/HeadCounter/src/com/codecool/office/Gender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/HeadCounter/src/com/codecool/office/Group.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/HeadCounter/src/com/codecool/office/Office.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/HeadCounter/src/com/codecool/office/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/LifeOfAnts1/LifeOfAnts1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/LifeOfAnts1/src/main/java/hu/codecool/papractice/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/LifeOfAnts1/src/main/java/hu/codecool/papractice/Colony.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/LifeOfAnts1/src/main/java/hu/codecool/papractice/ant/Ant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/LifeOfAnts1/src/main/java/hu/codecool/papractice/ant/Drone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/LifeOfAnts1/src/main/java/hu/codecool/papractice/ant/MatingStatusReporter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/LifeOfAnts1/src/main/java/hu/codecool/papractice/ant/Queen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/LifeOfAnts1/src/main/java/hu/codecool/papractice/ant/Soldier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/LifeOfAnts1/src/main/java/hu/codecool/papractice/ant/Worker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/LifeOfAnts1/src/main/java/hu/codecool/papractice/grid/Coordinate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/LifeOfAnts1/src/main/java/hu/codecool/papractice/grid/Direction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/Network3/Network3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/Network3/src/main/java/com/codecool/network/ConnectedCounter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/Network3/src/main/java/com/codecool/network/Network.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/Network3/src/main/java/com/codecool/network/NormalCounter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/Network3/src/main/java/com/codecool/network/device/Connected.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/Network3/src/main/java/com/codecool/network/device/Device.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/Network3/src/main/java/com/codecool/network/device/Normal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/Network3/src/main/java/com/codecool/network/device/Screen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/Network3/src/main/java/com/codecool/network/device/ScreenedDevice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/Network3/src/main/java/com/codecool/network/device/Smart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/TaxiCompany/TaxiCompany.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/TrainCompany/TrainCompany.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/TrainCompany/src/main/java/org/codecool/papractice/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/TrainCompany/src/main/java/org/codecool/papractice/TrainCompany.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/TrainCompany/src/main/java/org/codecool/papractice/trains/Freight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/TrainCompany/src/main/java/org/codecool/papractice/trains/IC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/TrainCompany/src/main/java/org/codecool/papractice/trains/Passenger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/TrainCompany/src/main/java/org/codecool/papractice/trains/Train.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/TrainCompany/src/main/java/org/codecool/papractice/trains/Transport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/TrainCompany2/TrainCompany2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/TrainCompany2/src/main/java/com/codecool/train/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/TrainCompany2/src/main/java/com/codecool/train/TrainCompany.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/TrainCompany2/src/main/java/com/codecool/train/Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/TrainCompany2/src/main/java/com/codecool/train/train/Freight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/TrainCompany2/src/main/java/com/codecool/train/train/IC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/TrainCompany2/src/main/java/com/codecool/train/train/Passenger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/TrainCompany2/src/main/java/com/codecool/train/train/Train.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/TrainCompany2/src/main/java/com/codecool/train/train/TrainType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/TrainCompany2/src/main/java/com/codecool/train/train/Transport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/Wardrobe/Wardrobe.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/Wardrobe/src/main/java/com/codecool/papractice/Wardrobe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/Wardrobe/src/main/java/com/codecool/papractice/cloth/Cloth.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/Wardrobe/src/main/java/com/codecool/papractice/cloth/ClothType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/Wardrobe/src/main/java/com/codecool/papractice/hanger/DoubleHanger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/Wardrobe/src/main/java/com/codecool/papractice/hanger/Hanger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/Wardrobe/src/main/java/com/codecool/papractice/hanger/SingleHanger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/mockPA/mockPA.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/mockPA/src/main/java/com/codecool/network/ConnectedCounter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/mockPA/src/main/java/com/codecool/network/Network.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/mockPA/src/main/java/com/codecool/network/NormalByPower.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/mockPA/src/main/java/com/codecool/network/Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/mockPA/src/main/java/com/codecool/network/device/Connected.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/mockPA/src/main/java/com/codecool/network/device/Device.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/mockPA/src/main/java/com/codecool/network/device/DeviceWithScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/mockPA/src/main/java/com/codecool/network/device/Normal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/mockPA/src/main/java/com/codecool/network/device/ScreenSize.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/mockPA/src/main/java/com/codecool/network/device/Smart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/mockPA2/mockPA2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/mockPA2/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/mockPA2/src/main/java/com/codecool/mockpa2/ConnectedCounter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/mockPA2/src/main/java/com/codecool/mockpa2/Network.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/mockPA2/src/main/java/com/codecool/mockpa2/NormalByPower.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/mockPA2/src/main/java/com/codecool/mockpa2/Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/mockPA2/src/main/java/com/codecool/mockpa2/device/Connected.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/mockPA2/src/main/java/com/codecool/mockpa2/device/Device.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/mockPA2/src/main/java/com/codecool/mockpa2/device/DeviceWithScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/mockPA2/src/main/java/com/codecool/mockpa2/device/Normal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/mockPA2/src/main/java/com/codecool/mockpa2/device/ScreenSize.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../06JAVA_OOP/PApractice/mockPA2/src/main/java/com/codecool/mockpa2/device/Smart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/api-gateway/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/api-gateway/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/api-gateway/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/api-gateway/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/api-gateway/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/api-gateway/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/api-gateway/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/api-gateway/src/main/java/com/codecool/apigateway/ApiGatewayApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/api-gateway/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/api-gateway/src/test/java/com/codecool/apigateway/ApiGatewayApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/diceroll/src/main/java/com/codecool/diceroll/controller/DiceRollController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/diceroll/src/main/java/com/codecool/diceroll/service/DiceRollService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/diceroll/src/test/java/com/codecool/diceroll/service/DiceRollServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/rpggame/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/rpggame/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/rpggame/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/rpggame/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/rpggame/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/rpggame/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/rpggame/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/rpggame/src/main/java/com/codecool/rpggame/RpggameApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/rpggame/src/main/java/com/codecool/rpggame/controller/RpgGasmeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/rpggame/src/main/java/com/codecool/rpggame/model/DiceRollResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/rpggame/src/main/java/com/codecool/rpggame/service/RollServiceCaller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/rpggame/src/main/java/com/codecool/rpggame/service/RpgGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/rpggame/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/rpggame/src/test/java/com/codecool/rpggame/service/RpgGameTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/service-registry/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/service-registry/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/service-registry/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/service-registry/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/service-registry/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/service-registry/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/service-registry/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/service-registry/src/main/java/com/codecool/serviceregistry/ServiceRegistryApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/service-registry/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/RPGMicroService/service-registry/src/test/java/com/codecool/serviceregistry/ServiceRegistryApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/quicksort_practice/quicksort_practice.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../07JAVA_EE/quicksort_practice/src/com/codecool/quicksort/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../adv_python_ex/ex1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../adv_python_ex/ex10.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../adv_python_ex/ex11.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../adv_python_ex/ex12.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../adv_python_ex/ex13.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../adv_python_ex/ex14.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../adv_python_ex/ex15.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../adv_python_ex/ex16.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../adv_python_ex/ex17.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../adv_python_ex/ex18.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../adv_python_ex/ex19.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../adv_python_ex/ex2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../adv_python_ex/ex20.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../adv_python_ex/ex21.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../adv_python_ex/ex22.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../adv_python_ex/ex23JAVA.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../adv_python_ex/ex3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../adv_python_ex/ex4.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../adv_python_ex/ex5.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../adv_python_ex/ex6.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../adv_python_ex/ex7.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../adv_python_ex/ex8.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../adv_python_ex/ex9.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../advanced_python_practice/ex1_python.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../advanced_python_practice/practice/src/main/java/com/codecool/practice/Ex2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../advanced_python_practice/practice/src/main/java/com/codecool/practice/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../advanced_python_practice/practice/src/main/java/com/codecool/practice/Stack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../advanced_python_practice/practice/src/main/java/com/codecool/practice/ex2/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../advanced_python_practice/practice/src/main/java/com/codecool/practice/hash/Entry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../advanced_python_practice/practice/src/main/java/com/codecool/practice/hash/MyMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../first_webpage/.idea/first_webpage.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../first_webpage/hello_world.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../first_webpage/myfirstpage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../flasknote/.idea/flasknote.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../flasknote/server.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../flasknote/templates/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../flasknote/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../simon_says_ex/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../simon_says_ex/js/lib.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../simon_says_ex/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../super-sprinter-3000/.idea/wswp-super-sprinter-3000-reference.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../tryout/src/ants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../tryout/tryout.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../untitled/.idea/untitled.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../untitled/fibonacci.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../untitled/hello_js.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../untitled/js/bang.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../untitled/js/fibonacci.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../untitled/navbar_tryout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../untitled/tryout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../untitled2/.idea/untitled2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../untitled2/static/block_to_shoot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../untitled2/static/js/hit_test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../untitled2/templates/game_test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../untitled3/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../untitled3/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../untitled3/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../untitled3/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../untitled3/.idea/untitled3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../untitled3/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../untitled3/js/lib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/drbsimon/client/ClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/drbsimon/client/ClientApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/drbsimon/client/caller/ServerCaller.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/drbsimon/client/caller/ServerCaller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/drbsimon/client/tester/TesterRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/drbsimon/client/tester/TesterRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/test/java/com/drbsimon/client/ClientApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/drbsimon/server/controller/RequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/drbsimon/server/controller/RequestController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="JUnit5 Test Class" />
+        <option value="Kotlin File" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_COMMON_BRANCH" value="development" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="ProjectId" id="1kIdbNm7nPH3zu8dqKKUE2C2mUJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="h2" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="jdk.selected.JAVA_MODULE" value="11" />
+    <property name="last_opened_file_path" value="$USER_HOME$/cc_git/blf" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.drbsimon.server.service" />
+      <recent name="com.drbsimon.server.repository" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.drbsimon.server.model" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.drbsimon.server.dao" />
+      <recent name="com.drbsimon.server.model.dto" />
+      <recent name="com.drbsimon.server.repository" />
+      <recent name="com.drbsimon.server.model" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/main/java/com/drbsimon/client/controller" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.com.drbsimon.client in client">
+    <configuration name="AppUserRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.drbsimon.server.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.drbsimon.server.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.drbsimon.server.repository.AppUserRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.drbsimon.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.drbsimon.server" />
+      <option name="MAIN_CLASS_NAME" value="com.drbsimon.server.ServerApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.drbsimon.server.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.drbsimon.server.service" />
+      <option name="MAIN_CLASS_NAME" value="com.drbsimon.server.service.UserServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.testSuccessfulNewUserRegistration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.drbsimon.server.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.drbsimon.server.service" />
+      <option name="MAIN_CLASS_NAME" value="com.drbsimon.server.service.UserServiceTest" />
+      <option name="METHOD_NAME" value="testSuccessfulNewUserRegistration" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.drbsimon.client in client" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.drbsimon.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.drbsimon.client" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="client" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.drbsimon.client.ClientApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.drbsimon.server.ServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.com.drbsimon.client in client" />
+        <item itemvalue="JUnit.UserServiceTest.testSuccessfulNewUserRegistration" />
+        <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="JUnit.ServerApplicationTests" />
+        <item itemvalue="JUnit.AppUserRepositoryTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3bd17887-cc8c-4976-af3d-eb5562f897f2" name="Default Changelist" comment="" />
+      <created>1605392109839</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605392109839</updated>
+      <workItem from="1605392111116" duration="3554000" />
+      <workItem from="1605395686611" duration="11382000" />
+      <workItem from="1605461908015" duration="54237000" />
+      <workItem from="1605597354495" duration="13640000" />
+      <workItem from="1605626466906" duration="13757000" />
+      <workItem from="1605647671588" duration="2181000" />
+      <workItem from="1605694052005" duration="4398000" />
+      <workItem from="1605701839285" duration="17830000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2475" y="201" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605463553988">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2475" y="201" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605463553988" />
+    <state x="2833" y="223" width="374" height="592" key="#com.intellij.ide.util.MemberChooser" timestamp="1605701346466">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2833" y="223" width="374" height="592" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605701346466" />
+    <state x="2688" y="247" width="374" height="592" key="#com.intellij.ide.util.MemberChooser/0.27.1920.985/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605480136893" />
+    <state x="2632" y="408" width="495" height="321" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1605473583000">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2632" y="408" width="495" height="321" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605473583000" />
+    <state x="2491" y="0" width="845" height="1080" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605717961696">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2491" y="0" width="845" height="1080" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605717961696" />
+    <state x="2491" y="119" width="758" height="855" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1920.985/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605478721730" />
+    <state x="2613" y="289" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605517664428">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2613" y="289" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605517664428" />
+    <state x="2613" y="289" width="524" height="509" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1605478774712">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2613" y="289" width="524" height="509" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.27.1920.985/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605478774712" />
+    <state x="2663" y="298" width="424" height="491" key="FileChooserDialogImpl" timestamp="1605694074317">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2663" y="298" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605694074317" />
+    <state width="1664" height="483" key="GridCell.Tab.0.bottom" timestamp="1605728431962">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1664" height="483" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605728431962" />
+    <state width="1874" height="537" key="GridCell.Tab.0.bottom/0.27.1920.985/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605564825682" />
+    <state width="1664" height="483" key="GridCell.Tab.0.center" timestamp="1605728431962">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1664" height="483" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605728431962" />
+    <state width="1874" height="537" key="GridCell.Tab.0.center/0.27.1920.985/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605564825682" />
+    <state width="1664" height="483" key="GridCell.Tab.0.left" timestamp="1605728431962">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1664" height="483" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605728431962" />
+    <state width="1874" height="537" key="GridCell.Tab.0.left/0.27.1920.985/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605564825682" />
+    <state width="1664" height="483" key="GridCell.Tab.0.right" timestamp="1605728431962">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1664" height="483" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605728431962" />
+    <state width="1874" height="537" key="GridCell.Tab.0.right/0.27.1920.985/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605564825682" />
+    <state width="1664" height="483" key="GridCell.Tab.1.bottom" timestamp="1605728431962">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1664" height="483" key="GridCell.Tab.1.bottom/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605728431962" />
+    <state width="1874" height="537" key="GridCell.Tab.1.bottom/0.27.1920.985/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605564825682" />
+    <state width="1664" height="483" key="GridCell.Tab.1.center" timestamp="1605728431962">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1664" height="483" key="GridCell.Tab.1.center/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605728431962" />
+    <state width="1874" height="537" key="GridCell.Tab.1.center/0.27.1920.985/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605564825682" />
+    <state width="1664" height="483" key="GridCell.Tab.1.left" timestamp="1605728431962">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1664" height="483" key="GridCell.Tab.1.left/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605728431962" />
+    <state width="1874" height="537" key="GridCell.Tab.1.left/0.27.1920.985/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605564825682" />
+    <state width="1664" height="483" key="GridCell.Tab.1.right" timestamp="1605728431962">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1664" height="483" key="GridCell.Tab.1.right/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605728431962" />
+    <state width="1874" height="537" key="GridCell.Tab.1.right/0.27.1920.985/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605564825682" />
+    <state width="1664" height="732" key="GridCell.Tab.2.bottom" timestamp="1605634417533">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1664" height="732" key="GridCell.Tab.2.bottom/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605634417533" />
+    <state width="1874" height="351" key="GridCell.Tab.2.bottom/0.27.1920.985/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605395665714" />
+    <state width="1664" height="732" key="GridCell.Tab.2.center" timestamp="1605634417532">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1664" height="732" key="GridCell.Tab.2.center/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605634417532" />
+    <state width="1874" height="351" key="GridCell.Tab.2.center/0.27.1920.985/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605395665713" />
+    <state width="1664" height="732" key="GridCell.Tab.2.left" timestamp="1605634417532">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1664" height="732" key="GridCell.Tab.2.left/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605634417532" />
+    <state width="1874" height="351" key="GridCell.Tab.2.left/0.27.1920.985/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605395665713" />
+    <state width="1664" height="732" key="GridCell.Tab.2.right" timestamp="1605634417533">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1664" height="732" key="GridCell.Tab.2.right/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605634417533" />
+    <state width="1874" height="351" key="GridCell.Tab.2.right/0.27.1920.985/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605395665714" />
+    <state x="2413" y="198" width="924" height="691" key="Maven.ArtifactSearchDialog" timestamp="1605525003307">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2413" y="198" width="924" height="691" key="Maven.ArtifactSearchDialog/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605525003307" />
+    <state x="2639" y="223" width="471" height="640" key="RollbackChangesDialog" timestamp="1605650824519">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2639" y="223" width="471" height="640" key="RollbackChangesDialog/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605650824519" />
+    <state x="2651" y="455" width="448" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605433093177">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2651" y="455" width="448" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605433093177" />
+    <state x="2604" y="347" width="541" height="393" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1605465909262">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2604" y="347" width="541" height="393" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605465909262" />
+    <state x="2571" y="250" width="618" height="580" key="find.popup" timestamp="1605622411068">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2571" y="250" width="618" height="580" key="find.popup/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605622411068" />
+    <state x="2501" y="244" width="748" height="599" key="new project wizard" timestamp="1605392454694">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2501" y="244" width="748" height="599" key="new project wizard/0.27.1920.985/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605392454694" />
+    <state x="2544" y="245" width="672" height="677" key="run.anything.popup" timestamp="1605629827273">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2544" y="245" width="672" height="677" key="run.anything.popup/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605629827273" />
+    <state x="2543" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1605727937043">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2543" y="239" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1605727937043" />
+  </component>
+</project>

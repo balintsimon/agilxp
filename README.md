@@ -45,6 +45,13 @@ Technologies used in creating the services:
  - JPA
  - H2 database (NB: database uses default port, user name and password)
  
- ## How to Start the Project
- Please start server first. When it is up and running, you can run the client to initiate the tests.
- Both modules use Maven.
+## How to Start the Project
+This project may be started with Docker or with Maven.
+
+In case of starting with Docker, please run "docker-compose up --build" from the root folder of the project.
+
+In case of running with maven, please please start server first. When it is up and running, you can run the client 
+to initiate the tests. Keep in mind that the client needs the `HOST` and `PORT` environmental variables. Depending on your
+configuration `HOST` may be `localhost` and `PORT` is `9800` (as set in server's application.properties). Both modules use Maven.
+
+Keep in mind that in any case H2 database uses default configuration and it is pre-defined in server's application.properties.

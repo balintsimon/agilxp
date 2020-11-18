@@ -27,7 +27,7 @@ public class ClientApplication implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) {
+    public void run(String... args) throws InterruptedException {
         log.info("EXECUTING test application");
         testerRunner.run();
     }

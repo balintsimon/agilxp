@@ -1,0 +1,19 @@
+version: "3"
+services:
+  backend:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./server
+    volumes:
+      - ./server/target:/app/app/target
+  frontend:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./client
+    volumes:
+      - ./client/target:/app/app/target
+    environment:
+      - HOST=backend
+      - PORT=9800
+    depends_on:
+      - backend
