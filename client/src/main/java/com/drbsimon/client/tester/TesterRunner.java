@@ -14,6 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 @Data
 @RequiredArgsConstructor
@@ -27,7 +28,8 @@ public class TesterRunner {
     /**
      * Run all stages of the homework exercise automatically.
      */
-    public void run() {
+    public void run() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(5);
         GroupCreatedDto adminGroup = stageOne();
         if (adminGroup != null) {
             stageTwo(adminGroup);

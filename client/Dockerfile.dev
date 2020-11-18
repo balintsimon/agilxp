@@ -1,0 +1,6 @@
+FROM maven:3.6.3-jdk-11 AS MAVEN_BUILD
+WORKDIR '/app'
+EXPOSE 8080
+COPY ./ ./
+RUN mvn clean package
+CMD ["java", "-jar", "/app/target/client-0.0.1-SNAPSHOT.jar"]

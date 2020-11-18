@@ -43,6 +43,8 @@ public class RequestController {
 
     @PostMapping("/group")
     public GroupCreatedDto registerNewGroup(@RequestBody NewGroupDto newGroupDto) {
+        System.out.println("Got request");
+        System.out.println(newGroupDto);
         return userService.tryRegisterGroup(newGroupDto);
     }
 

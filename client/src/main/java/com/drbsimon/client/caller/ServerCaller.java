@@ -40,6 +40,8 @@ public class ServerCaller {
     }
 
     public GroupCreatedDto registerNewGroup(NewGroupDto newGroupDto) {
+        System.out.println("Base URL");
+        System.out.println(baseUrl);
         return restTemplate.postForObject(baseUrl + "/user/group", newGroupDto, GroupCreatedDto.class);
     }
 
