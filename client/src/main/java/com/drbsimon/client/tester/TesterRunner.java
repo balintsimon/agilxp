@@ -42,13 +42,13 @@ public class TesterRunner {
      * @return Created admin user and group that it admins.
      */
     private GroupCreatedDto stageOne() {
-        String adminName = "Group Admin";
-        String groupName = "Household";
+        String adminName = "Adam Savage";
+        String groupName = "M5 Industries";
         Theme chosenTheme = Theme.DAY;
         String backgroundName = "Office";
         String iconName = "Chair";
 
-        String app1 = adminName + "'s Settings";
+        String app1 = "Table saw";
         String app2 = "IntelliJ IDEA";
 
         log.info("1st STAGE: register new admin");
