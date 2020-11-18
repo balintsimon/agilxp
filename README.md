@@ -44,3 +44,7 @@ Technologies used in creating the services:
  - Lombok
  - JPA
  - H2 database (NB: database uses default port, user name and password)
+ 
+ ## How to Start the Project
+ Please start server first. When it is up and running, you can run the client to initiate the tests.
+ Both modules use Maven.
