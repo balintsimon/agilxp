@@ -9,7 +9,7 @@ services:
   frontend:
     build:
       dockerfile: Dockerfile.dev
-      context: ./client
+      context: ./client 
     volumes:
       - ./client/target:/app/app/target
     environment:
